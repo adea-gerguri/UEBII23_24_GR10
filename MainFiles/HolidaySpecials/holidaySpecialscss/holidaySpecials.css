@@ -1,0 +1,129 @@
+body{
+    background-color: black;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+video {
+    width: 100%;
+    height: auto;
+    margin-bottom: 75px;
+}
+#video-container{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.text-over{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding-bottom: 20px;
+}
+button{
+    background-color: transparent !important;
+    border-color: #777 !important;
+}
+p{
+    color:white;
+}
+.dior-section{
+    line-height: 33px;
+    text-align: justify;
+    margin: 55px;
+    margin-left: 65px;
+}
+div + img{
+    margin: 5px;
+}
+#calendar:hover{
+    width: 80%;
+    transition: width 0.5s ease;
+    overflow: hidden;
+}
+
+#adv-clnd-btn{
+    position: absolute; 
+    top: 185%;
+    left: 72.5%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    text-align: center;
+    border-color: white !important;
+}
+
+a + p{
+    text-color: white; 
+}
+a{
+    text-decoration: none;
+}
+.btn:hover{
+    color:white ;
+}
+.hermes_ad{
+    width: 250px;
+    height: 250px;
+    
+}
+#pendant{
+    margin:250px;
+    margin-top: 300px;
+}
+.special::before{
+    background: radial-gradient(
+        800px circle at 100px 100px,
+        rgba(255,255,255,0.06),
+        transparent 40%
+    );
+    border-radius: inherit;
+    margin-bottom: inherit;
+}
+.popupp{
+    
+    width: 350px ;
+    height: 270px ;
+    background-color: rgba(203, 194, 194, 0.725) ;
+    border-radius: 6px ;
+    position: relative  ;
+    top: 0 ;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    overflow: hidden;
+}
+.open-popupp{
+    color: black;
+    visibility: visible;
+    top:50%;
+    transform: translate(-50%, -50%) scale(1);
+   
+}
+.popupp img{
+    background-color: rgba(203, 194, 194, 0.542);
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    border-top: 1px dotted darkred;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+.popupp h4{
+   margin-top: 80px;
+}
+#okay_btn{
+    background-color: darkred !important;
+    color: white !important;
+    z-index: -1 !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 20px !important;
+   
+}
+
+
+

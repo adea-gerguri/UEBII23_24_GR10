@@ -1,0 +1,129 @@
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+  overflow-x: hidden;
+}
+h1{
+  text-transform: uppercase;
+  font-size: 35px;
+  color: #150044;
+}
+.title h1::after{
+  content: "";
+  height: 5px;
+  width: 100px;
+  background-color: #56a1cd;
+  border-radius: 25px;
+  display: block;
+  margin:auto;
+}
+
+
+.button{
+  margin-top:50px;
+  overflow: hidden;
+  background-color: #1e7e94;
+  width:fit-content;
+  border-radius: 40px;
+  padding: 8px 15px;
+  border:2px solid lightgrey;
+}
+
+
+.button a{
+  text-decoration: none;
+  color:#fff;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+}
+.button:hover{
+  color:#fff;
+  background-color: rgb(97, 0, 0);
+  transition: 1s ease;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  margin-bottom: 75px;
+}
+#video-container{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-list li {
+  margin-bottom: 15px;
+}
+
+.main-list li:before {
+  content: "• ";
+  color: #ff3366; 
+}
+
+.sub-list {
+  margin-left: 20px;
+}
+
+.sub-list li:before {
+  content: "▹ ";
+  color: #3399ff; 
+}
+#slideParagraph{
+  display: none;
+}
+button{
+  color:#fff;
+}
+button:hover{
+  color:#fff;
+  background-color: rgb(97, 0, 0);
+  transition: 1s ease;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-left: 100px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+textarea {
+  margin-bottom: 10px;
+}
+.primary-btn{
+  text-decoration: none;
+  padding: 5px 15px;
+  background-color: #1e7e94;
+  border-radius: 40px;
+  color:#fff;
+  font-size: 18px;
+}
+.primary-btn:hover{
+  color:#fff;
+  background-color: rgb(97, 0, 0);
+  transition: 1s ease;
+}
+h5{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-left: 100px;
+}
+
+
+.BorderThis{
+  border: 1px solid transparent;
+
+  border-image: url(/MainFiles/AboutUs/aboutUsIMG/2560px-5120x2880-dark-blue-solid-color-background.jpg) 30 round;
+}
