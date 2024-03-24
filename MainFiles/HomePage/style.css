@@ -1,9 +1,3 @@
-/* body {
-    /* background-image: url('Img1.jpg');
-    background-size: cover; */
-    /* margin: 0; */
-    /* padding: 10px; */
-/* } */ 
 
 #epara{
     color: black;
@@ -24,19 +18,6 @@ font-family: 'Vina Sans', sans-serif;
 color: white;
 font-size: 40px;
 }
-
-
-/* #carouselExample{
-    width: 100%;
-    margin-top: -100px;
-    box-sizing: border-box;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    /* overflow: hidden; */
-    /* max-height: 100%; */
-    /* height: 200px; */
-
-
 
 div h3{
     font-size: 15px;
@@ -121,7 +102,7 @@ a.rt{
   .family {
     position: relative;
     height: 100vh; 
-    background-image: url('/Images/three_balenciaga.jpg');
+    background-image: url('../../Images/three_balenciaga.jpg');
     background-size: cover;
     color: white; 
     padding: 20px; 
@@ -153,7 +134,7 @@ p {
 .holiday {
     position: relative;
     height: 100vh;
-    background-image: url('/Images/Img5.jpeg');
+    background-image: url('../../Images/Img5.jpeg');
     background-size: cover;
     color: white;
     padding: 20px;
