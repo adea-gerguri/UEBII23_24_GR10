@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php include '../HeaderFooter/header.html' ?>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
@@ -15,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caprasimo&family=DM+Serif+Display&family=Kanit:wght@200;300;400&family=Lobster&family=Preahvihear&family=Vina+Sans&display=swap" rel="stylesheet">
-    <link href="/MainFiles/HeaderFooter/footerStyle.css" rel="stylesheet">
+    <link href="../HeaderFooter/footerStyle.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -174,20 +175,20 @@ a.sign:hover{
               
 
                   <div class="carousel-item active item1" style="position: relative;">
-                    <img style="height: 700px; filter: brightness(70%);" src="/Images/Img1.jpg" class="d-block w-100 " alt="...">
+                    <img style="height: 700px; filter: brightness(70%);" src="../../Images/Img1.jpg" class="d-block w-100 " alt="...">
                     <div class="carousel-caption d-none d-md-block" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);">
                       <h5 style="color: white; font-size: 60px; font-family: 'Lemon', serif;">Spring Collection</h5>
                     </div>
                   </div>
                   
                   <div class="carousel-item">
-                    <img style="height: 700px; filter: brightness(70%);" src="/Images/Img2.jpg" class="d-block w-100" alt="...">
+                    <img style="height: 700px; filter: brightness(70%);" src="../../Images/Img2.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);">
                       <h5 style="color: white; font-size: 60px; font-family: 'Lemon', serif;">Black & White Collection</h5>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img style="height: 700px; filter: brightness(70%)" src="winter.jpeg" class="d-block w-100" alt="...">
+                    <img style="height: 700px; filter: brightness(70%)" src="../HomePage/winter.jpeg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);">
                       <h5 style="color: white; font-size: 60px; font-family: 'Lemon', serif;">Winter Collection</h5>
                     </div>
@@ -205,7 +206,7 @@ a.sign:hover{
               <div class="family">
                 <!-- <img src="/Images/Img4.jpeg" -->
                 <p style="text-shadow: 1px 1px 2px pink;">SS18 Europa Jacket, €740</p>
-                <p ><a class="rt" style=" text-decoration: none; text-shadow: 1px 1px 2px pink;"  href="/MainFiles/WomanPage/casual.html#ll">Order</a></p>
+                <p ><a class="rt" style=" text-decoration: none; text-shadow: 1px 1px 2px pink;"  href="../WomanPage/casual.html#ll">Order</a></p>
             </div>
            
     
@@ -214,17 +215,17 @@ a.sign:hover{
           <tr>
               <td class="karta">
                   <div class="imagesss">
-                      <img src="/Images/nikexdior.jpeg" height="400px">
+                      <img src="../../Images/nikexdior.jpeg" height="400px">
                   </div>
                   <p class="maks" id="animated">Jordan 1 Retro High x Dior €2200</p>
-                  <p class="r2"><a class="maks" href="/MainFiles/MenPage/menSweaters.html#dd">Order</a></p>
+                  <p class="r2"><a class="maks" href="../MenPage/menSweaters.html#dd">Order</a></p>
               </td>
               <td class="karta">
                   <div class="imagesss">
-                      <img src="/MainFiles/HolidaySpecials/holidayspecialsIMG/ProductsIMGS/N-5-eau-de_parfum-woutbg.png" height="400px">
+                      <img src="../HolidaySpecials/holidayspecialsIMG/ProductsIMGS/N-5-eau-de_parfum-woutbg.png" height="400px">
                   </div>
                   <p class="maks">N&deg;5 Chanel </p>
-                  <p class="r2"><a class="maks" href="/MainFiles/HolidaySpecials/holidaySpecials.html#parfum">Order</a></p>
+                  <p class="r2"><a class="maks" href="../HolidaySpecials/holidaySpecials.html#parfum">Order</a></p>
               </td>
           </tr>
       </table>
@@ -237,24 +238,24 @@ a.sign:hover{
           <tr>
             <td class="carda" draggable="true">
               <div class="imagess">
-                <img src="/Images/imageedit_18_8739465563.png">
+                <img src="../../Images/imageedit_18_8739465563.png">
               </div>
               <p class="r1">Hermes Faubourg Tropical Birkin, €82,700</p>
-              <p class="r1"><a class="air" href="/MainFiles/WomanPage/bags.html#ok">Order</a></p>
+              <p class="r1"><a class="air" href="../WomanPage/bags.html#ok">Order</a></p>
             </td>
             <td class="carda" draggable="true">
               <div class="imagess">
-                <img src="/Images/imageedit_5_9782814227.png" style="margin-top: -130px;" alt="foto qe mungon ne github">
+                <img src="../../Images/imageedit_5_9782814227.png" style="margin-top: -130px;" alt="foto qe mungon ne github">
               </div>
               <p class="r1">Longchamp Le Pliage Original, €140</p>
-              <p class="r1"><a class="air" href="/MainFiles/WomanPage/bags.html#ok">Order</a></p>
+              <p class="r1"><a class="air" href="../WomanPage/bags.html#ok">Order</a></p>
             </td>
             <td class="carda" draggable="true">
               <div class="imagess">
-                <img src="/Images/imageedit_2_7479978221.png" style="margin-top: -60px;">
+                <img src="../../Images/imageedit_2_7479978221.png" style="margin-top: -60px;">
               </div>
               <p class="r1">Dior Book Tote, €6,500</p>
-              <p class="r1"><a class="air" href="/MainFiles/WomanPage/bags.html#ok">Order</a></p>
+              <p class="r1"><a class="air" href="../WomanPage/bags.html#ok">Order</a></p>
             </td>
           </tr>
         </table>
@@ -263,12 +264,12 @@ a.sign:hover{
       <br>
       <h2 class="trinity">TRINITY</h2>
       <div class="holiday">
-        <h3 id="holiday" ><a style="text-decoration: none; color: black;" href="/MainFiles/HolidaySpecials/holidaySpecials.html">HOLIDAY SPECIALS </a>  </h3>
+        <h3 id="holiday" ><a style="text-decoration: none; color: black;" href="../HolidaySpecials/holidaySpecials.html">HOLIDAY SPECIALS </a>  </h3>
       
       </div> 
       <div id="video-container">
         <video title="Click to hear the sound !" id="myVideo" autoplay muted loop>
-            <source src="INSILENCE 2023 SPRING_SUMMER Campaign Film.mp4" type="video/mp4">
+            <source src="./INSILENCE 2023 SPRING_SUMMER Campaign Film.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -276,7 +277,7 @@ a.sign:hover{
       
       <br>
       <div class="logo">
-        <img src="/Images/imageedit_8_7775958965.png" alt="logo" height="20px" >
+        <img src="../../Images/imageedit_8_7775958965.png" alt="logo" height="20px" >
         <span>AND 3</span>
       </div>
 
@@ -285,9 +286,9 @@ a.sign:hover{
     <td class="firstTableRow">
     
       <h2 class="ff">Help</h2>
-      <a href="/MainFiles/ContactUs/contactUs.html" class="help">Our Client Services are available for call from<br> 9 AM to 6 PM Monday to Thursday.</a>
-      <a href="/MainFiles/ContactUs/contactUs.html" class="help">Email Services are available 24/7</a>
-        <a href="/MainFiles/ContactUs/contactUs.html" class="help">CONTACT US</a>
+      <a href="../ContactUs/contactUs.html" class="help">Our Client Services are available for call from<br> 9 AM to 6 PM Monday to Thursday.</a>
+      <a href="../ContactUs/contactUs.html" class="help">Email Services are available 24/7</a>
+        <a href="../ContactUs/contactUs.html" class="help">CONTACT US</a>
       <br>
       <a href="mailto:support@rhae.com" class="help">EMAIL: support@rhae.com</a>
       <br>
@@ -307,7 +308,7 @@ a.sign:hover{
     </td>
     <td class="lastTableRow">
       <h2 class="lastTableh2">Email Sign-Up</h2>
-      <p class="lastParagraph"><a class="sign" href="/MainFiles/signUp/signUp.html"><mark class="markUp">Sign up</mark></a> for RHAE emails and receive the latest news<br> from La Maison, including exclusive online<br> pre-launches and new collections.</p>
+      <p class="lastParagraph"><a class="sign" href="../signUp/signUp.html"><mark class="markUp">Sign up</mark></a> for RHAE emails and receive the latest news<br> from La Maison, including exclusive online<br> pre-launches and new collections.</p>
     </td>
   </tr>
 </table>
@@ -320,16 +321,16 @@ a.sign:hover{
 <span>&copy; Grupi 5</span>
 
   <script>
-  $('#header').load('/MainFiles/HeaderFooter/header.html');
+  // $('#header').load('../HeaderFooter/header.html');
 
 </script>
 
 
-<script src="/MainFiles/HeaderFooter/footerStyle.js"></script>
+<script src="../HeaderFooter/footerStyle.js"></script>
               
-  <script src="/MainFiles/HomePage/carouselMoving.js"></script>
-  <script src="video.js" ></script>
-  <script src="draganddrop.js"></script>
+  <script src="../HomePage/carouselMoving.js"></script>
+  <script src="./video.js" ></script>
+  <script src="./draganddrop.js"></script>
 </body>
 </html>
 

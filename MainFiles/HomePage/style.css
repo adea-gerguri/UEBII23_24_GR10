@@ -121,7 +121,7 @@ color: white;
 .family {
   position: relative;
   height: 100vh; 
-  background-image: url('/Images/three_balenciaga.jpg');
+  background-image: url('../../Images/three_balenciaga.jpg');
   background-size: cover;
   color: white; 
   padding: 20px; 
@@ -153,7 +153,7 @@ p {
 .holiday {
   position: relative;
   height: 100vh;
-  background-image: url('/Images/Img5.jpeg');
+  background-image: url('../../Images/Img5.jpeg');
   background-size: cover;
   color: white;
   padding: 20px;
