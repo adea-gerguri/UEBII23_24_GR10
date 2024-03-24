@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Sign Up Form</title>
-    <link rel="stylesheet" href="/MainFiles/signUp/signUp.css">
-
-    <link rel="stylesheet" href="/MainFiles/">
+    <link rel="stylesheet" href="../signUp/signUp.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;1,100&display=swap" rel="stylesheet">
@@ -19,7 +17,7 @@
         }
 
         body {
-            background: url('/MainFiles/signUp/abstractback.jpg') repeat;
+            background: url('../signUp/abstractback.jpg') repeat;
             background-size: 1600px;
             background-attachment: fixed;
             background-position: center center;
@@ -45,7 +43,7 @@
         <div class="row">
             <div class="col-md-6">
 
-                <form class="customF" id="customF" action="/MainFiles/HomePage/index.html"  onsubmit="return validateForm()">
+                <form class="customF" id="customF" action="../HomePage/index.php"  onsubmit="return validateForm()">
                     <h2 class="mb-4 text-left">Sign Up</h2>
 
                     <div class="form-group">
@@ -115,7 +113,7 @@
                     <div class="form-group">
                         <label for="audioChallenge">For security purposes: Are you a robot?</label>
                         <audio controls>
-                            <source src="/MainFiles/signUp/lion_audio1.mp3" type="audio/mp3">
+                            <source src="../signUp/lion_audio1.mp3" type="audio/mp3">
                             Your browser does not support the audio tag.
                         </audio>
                         <small class="text-danger" id="audioChallengeError"></small>
@@ -130,11 +128,11 @@
                     
                     
 
-                    <p class="mt-3">Already have an account? <a href="login.html" target="_blank">Go to Login</a></p>
+                    <p class="mt-3">Already have an account? <a href="login.php" target="_blank">Go to Login</a></p>
                 </form>
             </div>
                 <div class="col-md-6">
-                    <img class="vertical-image" src="/MainFiles/signUp/signup_back.JPG" alt="Vertical Image">
+                    <img class="vertical-image" src="../signUp/signup_back.JPG" alt="Vertical Image">
                 </div>
             </div>
         </div>
@@ -142,22 +140,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="/MainFiles/signUp/passwordtrycatch.js"></script>
+    <script src="../signUp/passwordtrycatch.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
-    //     function validateForm() {
-    //     var input = document.getElementById('robotVerificationInput').value.toLowerCase();
-    //     var audioChallengeError = document.getElementById('audioChallengeError');
-
-    //     if (input !== 'lion') {
-    //         alert("The word entered is not correct!")
-    //         return false; // Do not allow
-    //     } else {
-    //         audioChallengeError.textContent = ''; // Clear any previous error message
-    //         return true; // Allow 
-    //     }
-    // }
-
         // password strength check
         document.getElementById('password').addEventListener('input', function () {
             var password = this.value;

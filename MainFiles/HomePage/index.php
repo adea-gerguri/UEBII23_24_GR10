@@ -75,21 +75,6 @@ a.maks:hover {
   border-collapse: collapse;
 }
 
-td {
-  /* width: 33.33%; Përcakto gjeresinë e njëjtë për të gjitha kolonat */
-  /* border: 1px solid #e3e3e3; */
-  /* padding: 10px; */
-}
-
-/* a.help,
-a.about,
-a.sign {
-  display: block;
-  text-decoration: none;
-  color: black;
-  text-align: center;
-} */
-
 a.help,
 a.about{
   display: block;
