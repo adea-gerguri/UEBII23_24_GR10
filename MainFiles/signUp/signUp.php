@@ -71,6 +71,7 @@
                             <option value="example@gmail.com">
                             <option value="example@hotmail.com">
                             <option value="example@yahoo.com">
+                            <option value="example@student.uni-pr.edu">
                         </datalist>
                     </div>
 
@@ -172,7 +173,19 @@
    
 
 
-</script>
+    </script>
+
+    <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $cardNumber = $_POST['creditCard'];
+            $cvv = $_POST['cvv'];
+            $expirationDate = $_POST['expirationDate'];
+
+        }
+        else {
+            echo "<script>alert('Try inputing the card information first please!');</script>";
+        }
+    ?>
 
 </body>
 

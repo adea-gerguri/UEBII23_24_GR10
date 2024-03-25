@@ -191,7 +191,7 @@ a.sign:hover{
               <div class="family">
                 <!-- <img src="/Images/Img4.jpeg" -->
                 <p style="text-shadow: 1px 1px 2px pink;">SS18 Europa Jacket, €740</p>
-                <p ><a class="rt" style=" text-decoration: none; text-shadow: 1px 1px 2px pink;"  href="../WomanPage/casual.html#ll">Order</a></p>
+                <p ><a class="rt" style=" text-decoration: none; text-shadow: 1px 1px 2px pink;"  href="../WomanPage/casual.php#ll">Order</a></p>
             </div>
            
     
@@ -203,14 +203,14 @@ a.sign:hover{
                       <img src="../../Images/nikexdior.jpeg" height="400px">
                   </div>
                   <p class="maks" id="animated">Jordan 1 Retro High x Dior €2200</p>
-                  <p class="r2"><a class="maks" href="../MenPage/menSweaters.html#dd">Order</a></p>
+                  <p class="r2"><a class="maks" href="../MenPage/menSweaters.php#dd">Order</a></p>
               </td>
               <td class="karta">
                   <div class="imagesss">
                       <img src="../HolidaySpecials/holidayspecialsIMG/ProductsIMGS/N-5-eau-de_parfum-woutbg.png" height="400px">
                   </div>
                   <p class="maks">N&deg;5 Chanel </p>
-                  <p class="r2"><a class="maks" href="../HolidaySpecials/holidaySpecials.html#parfum">Order</a></p>
+                  <p class="r2"><a class="maks" href="../HolidaySpecials/holidaySpecials.php#parfum">Order</a></p>
               </td>
           </tr>
       </table>
@@ -226,21 +226,21 @@ a.sign:hover{
                 <img src="../../Images/imageedit_18_8739465563.png">
               </div>
               <p class="r1">Hermes Faubourg Tropical Birkin, €82,700</p>
-              <p class="r1"><a class="air" href="../WomanPage/bags.html#ok">Order</a></p>
+              <p class="r1"><a class="air" href="../WomanPage/bags.php#ok">Order</a></p>
             </td>
             <td class="carda" draggable="true">
               <div class="imagess">
                 <img src="../../Images/imageedit_5_9782814227.png" style="margin-top: -130px;" alt="foto qe mungon ne github">
               </div>
               <p class="r1">Longchamp Le Pliage Original, €140</p>
-              <p class="r1"><a class="air" href="../WomanPage/bags.html#ok">Order</a></p>
+              <p class="r1"><a class="air" href="../WomanPage/bags.php#ok">Order</a></p>
             </td>
             <td class="carda" draggable="true">
               <div class="imagess">
                 <img src="../../Images/imageedit_2_7479978221.png" style="margin-top: -60px;">
               </div>
               <p class="r1">Dior Book Tote, €6,500</p>
-              <p class="r1"><a class="air" href="../WomanPage/bags.html#ok">Order</a></p>
+              <p class="r1"><a class="air" href="../WomanPage/bags.php#ok">Order</a></p>
             </td>
           </tr>
         </table>
@@ -249,7 +249,7 @@ a.sign:hover{
       <br>
       <h2 class="trinity">TRINITY</h2>
       <div class="holiday">
-        <h3 id="holiday" ><a style="text-decoration: none; color: black;" href="../HolidaySpecials/holidaySpecials.html">HOLIDAY SPECIALS </a>  </h3>
+        <h3 id="holiday" ><a style="text-decoration: none; color: black;" href="../HolidaySpecials/holidaySpecials.php">HOLIDAY SPECIALS </a>  </h3>
       
       </div> 
       <div id="video-container">
@@ -271,9 +271,9 @@ a.sign:hover{
     <td class="firstTableRow">
     
       <h2 class="ff">Help</h2>
-      <a href="../ContactUs/contactUs.html" class="help">Our Client Services are available for call from<br> 9 AM to 6 PM Monday to Thursday.</a>
-      <a href="../ContactUs/contactUs.html" class="help">Email Services are available 24/7</a>
-        <a href="../ContactUs/contactUs.html" class="help">CONTACT US</a>
+      <a href="../ContactUs/contactUs.php" class="help">Our Client Services are available for call from<br> 9 AM to 6 PM Monday to Thursday.</a>
+      <a href="../ContactUs/contactUs.php" class="help">Email Services are available 24/7</a>
+        <a href="../ContactUs/contactUs.php" class="help">CONTACT US</a>
       <br>
       <a href="mailto:support@rhae.com" class="help">EMAIL: support@rhae.com</a>
       <br>
@@ -293,7 +293,7 @@ a.sign:hover{
     </td>
     <td class="lastTableRow">
       <h2 class="lastTableh2">Email Sign-Up</h2>
-      <p class="lastParagraph"><a class="sign" href="../signUp/signUp.html"><mark class="markUp">Sign up</mark></a> for RHAE emails and receive the latest news<br> from La Maison, including exclusive online<br> pre-launches and new collections.</p>
+      <p class="lastParagraph"><a class="sign" href="../signUp/signUp.php"><mark class="markUp">Sign up</mark></a> for RHAE emails and receive the latest news<br> from La Maison, including exclusive online<br> pre-launches and new collections.</p>
     </td>
   </tr>
 </table>
