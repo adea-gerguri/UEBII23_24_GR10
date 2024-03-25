@@ -181,6 +181,11 @@
             $cvv = $_POST['cvv'];
             $expirationDate = $_POST['expirationDate'];
 
+            //Cookies per 30 dite
+            setcookie('creditCard', $cardNumber, time() + (86400 * 30), "/"); 
+            setcookie('cvv', $cvv, time() + (86400 * 30), "/"); 
+            setcookie('expirationDate', $expirationDate, time() + (86400 * 30), "/"); 
+
         }
         else {
             echo "<script>alert('Try inputing the card information first please!');</script>";
