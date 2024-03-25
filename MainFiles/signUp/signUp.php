@@ -174,6 +174,16 @@
 
 
     </script>
+     <script>
+        function showCookieConsent() {
+            var consent = confirm("This website uses cookies to ensure you get the best experience. Do you want to allow cookies?");
+            if (!consent) {
+                alert("You have chosen not to allow cookies. Some features of the website may not work properly.");
+                window.location.href = "../HomePage/index.php"; //go back to home
+            }
+        }
+        window.onload = showCookieConsent;
+    </script>
 
     <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
