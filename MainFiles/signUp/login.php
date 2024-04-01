@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,17 +47,17 @@
         <div class="row">
             <div class="col-md-6">
 
-                <form class="customF" action="../HomePage/index.php" onsubmit="return validateLogin()">
+                <form method="POST" class="customF" action="checklogin.php" >
                     <h2 class="mb-4 text-left">Login</h2>
 
                     <div class="form-group">
-                        <label for="loginEmail">Email address</label>
-                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+                        <label for="email">Email address</label>
+                        <input name="email" type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="loginPassword">Password</label>
-                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                        <label for="passwordi">Password</label>
+                        <input name="passwordi" type="passwordi" class="form-control" id="loginPassword" placeholder="Enter your password" required>
                     </div>
 
                     <div class="form-group">
@@ -89,57 +90,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-
-        hide
-        $(document).ready(function() {
-        $("#loginButton").click(function() {
-        $(this).hide(1000);
-        // show pas 5 sekondave
-        setTimeout(showButton, 5000);
-        });
-
-        //show prape
-        function showButton() {
-        $("#loginButton").show(1000);
-        }
-        });
   
-        var users = JSON.parse(localStorage.getItem('users')) || []; // e thirrim array
-
-        function validateLogin() {
-            var enteredEmail = document.getElementById('loginEmail').value;
-            var enteredPassword = document.getElementById('loginPassword').value;
-
-            // i marrim user info prej localStorage
-            var users = JSON.parse(localStorage.getItem('users')) || [];
-            console.log("USers:"+users)
-            let foundUser = users.filter(user => user.email === enteredEmail && user.password === enteredPassword)[0]; 
-            console.log("FoundUSer:"+foundUser);
-            var input = document.getElementById('robotVerificationInput').value.toLowerCase();
-        var audioChallengeError = document.getElementById('audioChallengeError');
-
-            if (input !== 'land') {
-                alert("The word entered is not correct!")
-                foundUser= null // Do not allow
-            }  else {
-            audioChallengeError.textContent = ''; // Clear any previous error message
-            // return true; // Allow 
-            }
-            if( foundUser !== undefined && foundUser !== null){
-                alert('Login successful');                    
-                    localStorage.setItem('loggedInUserEmail', foundUser.email);
-                    localStorage.setItem("LogedUserName",foundUser.fullName);
-                    console.log(foundUser.email)
-                    let userCart = JSON.parse(localStorage.getItem(foundUser.email + '_cart')) || [];
-                    localStorage.setItem('cart', JSON.stringify(userCart));
-
-            }else{
-                alert('Login failed');
-                return false;
-            }
-        }
-    </script>
 
 </body>
 
