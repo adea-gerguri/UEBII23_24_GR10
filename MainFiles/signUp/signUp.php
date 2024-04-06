@@ -43,16 +43,21 @@
         <div class="row">
             <div class="col-md-6">
 
-                <form class="customF" id="customF" action="../HomePage/index.php"  onsubmit="return validateForm()">
+                <form method="post" action="signUpcheck.php" class="customF" id="customF"  onsubmit="return validateForm()">
                     <h2 class="mb-4 text-left">Sign Up</h2>
 
                     <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        <label for="firstName">First Name</label>
+                        <input name="firstName" type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Gender</label><br>
+                        <label for="lastName">Last Name</label>
+                        <input name="lastName" type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Gender</label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
                             <label class="form-check-label" for="male">Male</label>
@@ -65,7 +70,7 @@
 
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required value="example@mail.com" list="emailOptions">
+                        <input name="email" type="email" class="form-control" id="email" placeholder="Enter your email" required value="example@mail.com" list="emailOptions">
                         <datalist id="emailOptions">
                             <option value="example@mail.com">
                             <option value="example@gmail.com">
@@ -77,7 +82,7 @@
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                        <input name="password" type="password" class="form-control" id="password" placeholder="Enter your password" required>
                         <!-- Output for psw strength-->
                         <output class="form-control" id="passwordStrength" name="passwordStrength"></output>
                         <small class="text-danger" id="passwordError"></small>
@@ -89,18 +94,19 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="creditCard">Credit Card</label>
-                        <input type="text" class="form-control" id="creditCard" placeholder="Enter your credit card number" required>
+                        <label for="card_number">Card Number</label>
+                        <input name="card_number" type="number" class="form-control" id="card_number" placeholder="Enter your card number" required>
                     </div>
 
+
                     <div class="form-group">
-                        <label for="expirationDate">Expiration Date</label>
-                        <input type="text" class="form-control" id="expirationDate" placeholder="MM/YYYY" required>
+                        <label for="expiration_date">Expiration Date</label>
+                        <input name="expiration_date" type="text" class="form-control" id="expirationDate" placeholder="MM/YYYY" required>
                     </div>
 
                     <div class="form-group" onsubmit="return valideCVV()">
                         <label for="cvv">CVV</label>
-                        <input type="text" class="form-control" id="cvv" placeholder="Enter CVV" required>
+                        <input name="cvv" type="text" class="form-control" id="cvv" placeholder="Enter CVV" required>
                     </div>
 
 
@@ -187,14 +193,14 @@
 
     <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $cardNumber = $_POST['creditCard'];
+            $card_number = $_POST['card_number'];
             $cvv = $_POST['cvv'];
-            $expirationDate = $_POST['expirationDate'];
+            $expiration_date = $_POST['expiration_date'];
 
             //Cookies per 30 dite
-            setcookie('creditCard', $cardNumber, time() + (86400 * 30), "/"); 
+            setcookie('card_number', $card_number, time() + (86400 * 30), "/"); 
             setcookie('cvv', $cvv, time() + (86400 * 30), "/"); 
-            setcookie('expirationDate', $expirationDate, time() + (86400 * 30), "/"); 
+            setcookie('expiration_date', $expiration_date, time() + (86400 * 30), "/"); 
 
         }
         else {
