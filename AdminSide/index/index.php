@@ -56,46 +56,60 @@
                     </p>
                 </div>
                 <div class="card">
-                    <h3>New Orders</h3> <!-- i njejti sen veq me query me interval t dites, maybe me intervval 1 javor -->
-                    <p>15</p>
+                    <h3>New Orders</h3> <!-- SELECT COUNT(invoiceID) FROM invoice WHERE invoiceDate >= NOW() - INTERVAL 1 MONTH; -->
+                    <p>/
+                        <?php
+                            // yuh yuh yuh;
+                        ?>
+                    </p>
                 </div>
                 <div class="card">
-                    <h3>Low Stock Items</h3> <!-- select count(id) from products where stock < 5 edhe shtine qaty posht-->
-                    <p>5</p>
+                    <h3>Low Stock Items</h3> <!-- SELECT COUNT(productID) FROM products WHERE stock < 5; edhe shtine qaty posht-->
+                    <p>/
+                        <?php
+                            //yuh yuh yuh;
+                        ?>
+                    </p>
                 </div>
             </section>
 
             <section class="recent-activity">
                 <h2>Recent Activity</h2>
                 <ul>
-                    <li>Order #12345 
+                    <li>Order /
                         <?php
                             // qitu vjen ni query
                             // select ID, fName, lName from ORDERS order by desc limit 1;
                             // ruj krejt neper variabla,
                             // echo $id;
                         ?>
-                        placed by John Smith
+                        placed by /
                         <?php
                             // echo $fname . " " . $lName;
                         ?>
                     </li>
 
-                    <li>Product "T-Shirt" 
+                    <li>Product /<!--"T-Shirt"-->
                         <?php 
                             // gjeje cili produkt u ndrru i fundit
-                            // select p.pName, admin.name from products p join audit a join users admin on p.id = a.id and admin.id = a.adminID order by desc limit 1;
+                            // select p.pName, admin.name from products p join auditChanges ac on p.id = ac.id join users admin on admin.id = ac.adminID order by ac.date desc limit 1;
                             // ruje qat p.pName me ni variabel $productName edhe a.adminID ne $admini
                             // echo $productName
                         ?>
-                        updated by Jane Doe
+                        updated by /<!--Jane Doe-->
                         <?php
                             // echo $admini;
                         ?>
                     
                     </li>
                     
-                    <li>New customer Sarah Jones registered</li> <!-- i njejti sen qitu shkon -->
+                    <li>
+                        New customer / 
+                            <?php 
+                                // yuh yuh yuh;
+                            ?>
+                        registered
+                    </li> <!-- i njejti sen qitu shkon -->
                 </ul>
             </section>
         </main>
