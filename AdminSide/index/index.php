@@ -21,7 +21,7 @@
                 </ul>
             </nav>
         </header>
-
+        
         <main class="main">
             <section class="overview">
                 <h2>Overview</h2>
@@ -79,7 +79,7 @@
                     <li>Order /
                         <?php
                             // qitu vjen ni query
-                            // select ID, fName, lName from ORDERS order by desc limit 1;
+                            // select ID, fName, lName from orders order by orderDate desc limit 1;
                             // ruj krejt neper variabla,
                             // echo $id;
                         ?>
