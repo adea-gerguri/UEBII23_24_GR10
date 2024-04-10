@@ -16,7 +16,6 @@
             $pdo = new PDO($dsn,$username,$password);
             $query = 'SELECT productImage, productName, productPrice FROM productszhushi;'; # >>> Duhet me bo qe mu rujt prej SQL injection
             foreach($pdo->query($query) as $product){ 
-                #echo"<div><div class='imagesss'><img src='{$rezultati['productImage']}' height='400px'></div><p class='maks' id='animated'> {$rezultati['productName']} {$rezultati['productPrice']}</p></div>";
                 echo"<div><div class='imagesss'><img src='{$product[0]}' height='400px'></div><p class='maks' id='animated'> {$product[1]} {$product[2]}</p></div>";
                 //echo"<pre>";
                 //var_dump($product);
