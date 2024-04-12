@@ -13,7 +13,7 @@
         <li><a href="../WomanPage/dress.php">DRESS</a></li>
         <li><a href="../WomanPage/bags.php">BAGS</a></li>
         <li><a href="../WomanPage/casual.php">CASUALS</a></li>
-        <li><a href="../WomanPage/shoes/shoes.php">SHOES</a></li>
+      
         <BR></BR>
         <li>KIDS</li>
         <li><a href="../KidsPage/kidsHoodies.php">HOODIES</a></li>
