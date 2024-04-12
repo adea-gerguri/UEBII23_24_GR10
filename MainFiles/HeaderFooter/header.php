@@ -27,7 +27,7 @@
         <li><a href="../AboutUs/Aboutus.php">ABOUT</a></li>
         <?php
         // var_dump($_SESSION);
-            // Start session
+           
             session_start();
             
             // Check if user is logged in
