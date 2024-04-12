@@ -21,6 +21,7 @@ class Products {
         $this->price=$price;
         $this->details_id=$details_id;
     }
+    
     function getPid(){return $this->pid;}
     function getProductName(){return $this->productName;}
     function getImgUrl(){return $this->img_url;}

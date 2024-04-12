@@ -19,7 +19,8 @@ class Product_Details{
  * details_id
  */
 try {
-  $conn = new PDO($dsn, $username, $password);
+  # $conn = new PDO($dsn, $username, $password);
+  $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   echo"<script> console.log('U lidhem me databaze.')</script>";
 
