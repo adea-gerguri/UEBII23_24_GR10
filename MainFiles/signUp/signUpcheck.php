@@ -23,8 +23,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn = DatabaseUtil::getConnection();
 
         // Prepare SQL statement to insert user data into the database
-        $stmt = $conn->prepare("INSERT INTO Users (firstName, lastName, gender, email, card_number, passwordi, expiration_date, cvv) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$firstName, $lastName, $gender, $email, $cardNumber, $hashedPassword, $expirationDate, $hashedCVV]);
+        $stmt = $conn->prepare("INSERT INTO Users (firstName, lastName, gender, email, card_number, passwordi, expiration_date, cvv) VALUES (:firstName, :lastName, :gender, :email, :cardNumber, :hashedPassword, :expirationDate, :hashedCVV)");
+        
+        // Bind parameters to statement
+        $stmt->bindParam(':firstName', $firstName);
+        $stmt->bindParam(':lastName', $lastName);
+        $stmt->bindParam(':gender', $gender);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':cardNumber', $cardNumber);
+        $stmt->bindParam(':hashedPassword', $hashedPassword);
+        $stmt->bindParam(':expirationDate', $expirationDate);
+        $stmt->bindParam(':hashedCVV', $hashedCVV);
+        
+        // Execute statement
+        $stmt->execute();
 
         // Redirect to a success page or perform other actions
         header("Location: ../HomePage/index.php");
