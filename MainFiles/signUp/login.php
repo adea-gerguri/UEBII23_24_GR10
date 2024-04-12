@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-md-6">
 
-                <form method="POST" class="customF" action="checklogin.php" >
+                <form method="POST" class="customF" action="logincheck.php" >
                     <h2 class="mb-4 text-left">Login</h2>
 
                     <div class="form-group">
@@ -56,8 +56,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="passwordi">Password</label>
-                        <input name="passwordi" type="passwordi" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                        <label for="password">Password</label>
+                        <input name="password" type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
                     </div>
 
                     <div class="form-group">
