@@ -1,28 +1,6 @@
 <?php
 include '../dbConn/init.php'; # credentials per databaze
-class Products {
-    private $pid;
-    private $productName;
-    private $reference_code;
-    private $img_url;
-    private $dimensions;
-    private $price;
-    private $details_id;
-    function __construct($pid, $productName, $img_url, $dimensions, $price, $details_id) {
-        $this->pid=$pid;
-        $this->productName=$productName;
-        $this->img_url=$img_url;
-        $this->dimensions=$dimensions;
-        $this->price=$price;
-        $this->details_id=$details_id;
-    }
-    function getPid(){return $this->pid;}
-    function getProductName(){return $this->productName;}
-    function getImgUrl(){return $this->img_url;}
-    function getDimensions(){return $this->dimensions;}
-    function getPrice(){return $this->price;}
-    function getDetailsId(){return $this->details_id;}
-}
+
 class Product_Details{
     private $details_id; # details id ska nevoj me kan hiq, po pe ruj per kur te diskutojm. nven t sajna duhet me kan pid, edhe tabela products duhet me kan pa details id
     private $first_Sentence;

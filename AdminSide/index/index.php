@@ -33,24 +33,27 @@
                             include '../dbConn/init.php'; // na jep credentials
                             try {
                                 # echo"<script> console.log(\"test\") </script>";
-                                $conn = new mysqli($servername, $username, $password, $database, $port); # qitu osht errori
+                                # $conn = new mysqli($servername, $username, $password, $database, $port); # qitu osht errori
+                                $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+                                $pdo = new PDO($dsn, $username, $password);
                                 echo"<script> console.log('U lidhem me databaze.')</script>";
-                              
+                                
                                 # sql ngjashem si me java
                                 $sql = "select sum(price) as cmimiTotal from products;"; # qito me : perpara jon placeholders, sikur me jep vlera permes references n c++
                                 # ; # -> qikjo osht fiks per databazenn ton, veq e bojna uncomment
-                                $stmt = $conn->prepare($sql); # statement
-                                $stmt->execute();
-                                $rezultati = $stmt->get_result()->fetch_assoc();
+                                echo"<script> console.log('ledri vula')</script>";
+                                $stmt = $pdo->query($sql); # statement
+                                #$stmt->execute();
+                                #$rezultati = $stmt->get_result()->fetch_assoc();
                                 if($rezultati){
                                     # var_dump($rezultati);
-                                    echo "$" . $rezultati['cmimiTotal'];
+                                    echo "$" . $stmt['cmimiTotal'];
                                 } else {
                                     echo 'Error 404 No Sales';
                                 }
                               } catch(Exception $e) {
                                 echo "Error 404 No Database";
-                                echo"<script>console.log(\"Gabim gjate lidhjes me Databaze: " . $e->getMessage() . "\") </script>";
+                                echo"<script>console.log(\"Gabim ne [index.php] gjate lidhjes me Databaze: " . $e->getMessage() . "\") </script>";
                               }
                         ?>
                     </p>
