@@ -60,17 +60,33 @@ class User {
     }
 
    
-}
-class Admin extends User {
-    public function __construct($id, $firstName, $lastName, $email, $password) {
-        parent::__construct($id, $firstName, $lastName, null, $email, null, $password, null, null);
+
+}class Admin extends User {
+    const adminId = null;
+    const adminName = 'admin';
+    const adminLastName = 'admin';
+    const adminEmail = 'admin@mail.com';
+    const adminPassword = 'admin1234';
+
+    public function __construct() {
+        parent::__construct(
+            self::adminId,
+            self::adminName,
+            self::adminLastName,
+            null, // Gender
+            self::adminLastName,
+            null, // Card number
+            self::adminLastName,
+            null, // Expiration date
+            null // CVV
+            // i lajm null  se skane nevoje me u perdor
+        );
     }
 
     public static function createPredefinedAdmin() {
-        return new Admin(null, 'admin', 'admin', 'admin@mail.com', '0000');
+        return new Admin();
     }
 }
-
 
 $admin = Admin::createPredefinedAdmin();
 
