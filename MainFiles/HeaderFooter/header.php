@@ -33,7 +33,7 @@
             // Check if user is logged in
             if(isset($_SESSION['user_name'])) {
                 // Display user's name
-                echo '<a href=".."><li style="margin-top:25px;">' . $_SESSION['user_name'] . '</li></a>';
+                echo '<a href="../user/user.php"><li style="margin-top:25px;">' . $_SESSION['user_name'] . '</li></a>';
                 echo '<a href="../signUp/logout.php"><i class="bi bi-box-arrow-left"></i></a>';
             } else {
                 // If user is not logged in, display login link

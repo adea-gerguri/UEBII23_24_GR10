@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Password is correct, set session variables and redirect to homepage
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['firstName'];
-
+           
        
             header("Location: ../HomePage/index.php");
            
