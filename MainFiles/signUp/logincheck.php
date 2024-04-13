@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Include the DatabaseUtil class for database connection
+
 require_once('./DatabaseUtil.php');
 
 // Check if the form is submitted
