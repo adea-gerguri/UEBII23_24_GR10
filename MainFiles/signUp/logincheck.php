@@ -21,12 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
         // Verify password
         if ($user && password_verify($password, $user['passwordi'])) {
-            // Password is correct, set session variables and redirect to homepage
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['firstName'];
            
-            // Set cookie for email
-            setcookie('email', $email, time() + (86400 * 30), "/"); // 30 days expiration
+            $emailArray = ['email' => $email];
+            $emailSerialized = serialize($emailArray);
+           setcookie('emailArray', $emailSerialized, time() + (86400 * 10), "/"); // 30 days expiration
+       
        
             header("Location: ../HomePage/index.php");
             exit();
