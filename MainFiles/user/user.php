@@ -69,6 +69,27 @@ try {
     $expirationDate = "";
 }
 
+//Perdorimi i sesioneve per me kqyr sa here eshte log in useri
+if(isset($_SESSION['visited_profile'])) {
+    
+    $_SESSION['visited_profile']++;
+} else {
+    
+    $_SESSION['visited_profile'] = 1;
+}
+
+if(isset($_COOKIE['visited_profile'])) {
+    // me rujt previous value
+    $previousVisits = $_COOKIE['visited_profile'];
+} else {
+    $previousVisits = 0;
+}
+
+$currentVisits = $_SESSION['visited_profile'];
+
+
+setcookie('visited_profile', $currentVisits, time() + (86400 * 30), "/"); 
+
 ?>
 
 <!DOCTYPE html>
@@ -150,6 +171,10 @@ try {
     <div class="form-group">
         <label for="cvv">CVV:</label>
         <input type="password" id="cvv" class="form-control" value="<?php echo "*************"; ?>" readonly>
+    </div>
+    <div class="form-group">
+        <label for="times">Visited Profile:</label>
+        <input type="times" id="times" class="form-control" value="<?php echo $_SESSION['visited_profile']." times" ?>" readonly>
     </div>
 </div>
 
