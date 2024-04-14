@@ -1,9 +1,9 @@
 <?php
 
+
 session_start();
 
 require_once('./DatabaseUtil.php');
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -12,20 +12,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $conn = DatabaseUtil::getConnection();
 
-
         $stmt = $conn->prepare("SELECT id, firstName, passwordi FROM Users WHERE email = ?");
         $stmt->execute([$email]);
         $user = $stmt->fetch();
-       
+
         if ($user && password_verify($password, $user['passwordi'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['firstName'];
-           
-            $emailArray = ['email' => $email];
-            $emailSerialized = serialize($emailArray);
-           setcookie('emailArray', $emailSerialized, time() + (86400 * 10), "/"); 
-       
-       
+
+            // Save email and password in an array
+            $credentials = ['email' => $email, 'password' => $password];
+
+            // Serialize the array
+            $credentialsSerialized = serialize($credentials);
+
+            // Save serialized array in a cookie
+            setcookie('credentials', $credentialsSerialized, time() + (86400 * 10), "/");
+
             header("Location: ../HomePage/index.php");
             exit();
         } else {
@@ -35,6 +38,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $e->getMessage();
     }
 }
+
+
+// session_start();
+
+// require_once('./DatabaseUtil.php');
+
+
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     $email = $_POST['email'];
+//     $password = $_POST['password'];
+
+//     try {
+//         $conn = DatabaseUtil::getConnection();
+
+
+//         $stmt = $conn->prepare("SELECT id, firstName, passwordi FROM Users WHERE email = ?");
+//         $stmt->execute([$email]);
+//         $user = $stmt->fetch();
+       
+//         if ($user && password_verify($password, $user['passwordi'])) {
+//             $_SESSION['user_id'] = $user['id'];
+//             $_SESSION['user_name'] = $user['firstName'];
+           
+//             $emailArray = ['email' => $email];
+//             $emailSerialized = serialize($emailArray);
+//            setcookie('emailArray', $emailSerialized, time() + (86400 * 10), "/"); 
+       
+       
+//             header("Location: ../HomePage/index.php");
+//             exit();
+//         } else {
+//             echo "Invalid email or password";
+//         }
+//     } catch (PDOException $e) {
+//         echo "Error: " . $e->getMessage();
+//     }
+// }
 
 
 

@@ -51,7 +51,8 @@
 
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input name="email" type="email" class="form-control" id="loginEmail" placeholder="Enter your email" value="<?php echo isset($_COOKIE['email']) ? $_COOKIE['email'] : ''; ?>" required>
+                        <input name="email" type="email" class="form-control" id="loginEmail" placeholder="Enter your email" value="<?php echo isset($_COOKIE['credentials']) ? unserialize($_COOKIE['credentials'])['email'] : ''; ?>" required>
+
                     </div>
 
                     <div class="form-group">
