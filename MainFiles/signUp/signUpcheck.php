@@ -76,4 +76,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
+//Validimi për expiration_date
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    if (isset($_POST["expiration_date"])){
+        $expiration_date = $_POST['expiration_date']; 
+    
+        if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $expiration_date)) {
+            echo "Data është në formatin e duhur.<br>";
+        } else {
+            echo "Formati i datës nuk është i saktë. Ju lutem shkruani datën në formatin YYYY-MM-DD.<br>";
+        }
+    }
+}
+
+//Validimi për numër të kartës
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['card_number'])) {
+        $card_number = $_POST['card_number'];
+        if (preg_match('/^\d{16}$/', $card_number)) {
+            echo "<div class='success-message'>Numri i kartës së kreditit është në formatin e duhur.<br>";
+        } else {
+            echo "<div class='error-message'>Numri i kartës së kreditit duhet të përmbajë saktësisht 16 shifra.<br>";
+        }
+    } else {
+        echo "<div class='error-message'>Fusha e numrit të kartës së kreditit nuk është plotësuar.<br>";
+    }
+}
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['cvv']) && preg_match('/^[0-9]{3}$/', $_POST['cvv']) && !preg_match('/[\s-]/', $_POST['cvv'])) {
+        echo "<div class='success-message'>CVV është në formatin e duhur.</div>";
+    } else {
+        echo "<div class='error-message'>CVV duhet të përmbajë saktësisht 3 shifra dhe të mos përmbajë hapësira ose '-'. </div>";
+    }
+}
+
 ?>
