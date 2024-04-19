@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../HomePage/index.php");
             exit();
         } else {
-            echo "Invalid email or password";
+            var_dump("Invalid email or password") ;
         }
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
