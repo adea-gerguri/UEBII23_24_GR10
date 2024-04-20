@@ -6,6 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index/index-style.css">
     <title>Document</title>
+    <style>
+        table{
+            width: 80%;
+            margin: 10%;
+            margin-top: 0%;
+        }
+        table thead th{
+            border-bottom: 1px groove;
+        }
+        table tbody tr td {
+            text-align: center;
+        }
+        tfoot tr td{
+            text-align: right;
+            border-top: 1px groove;
+            padding-right: 5%;
+            font-style: italic;
+        }
+        .tableDataId{
+            border-right: 1px groove;
+        }
+        form{
+            margin-top: 10%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -15,14 +44,15 @@
     include "../dbConn/objects.php";
     define("self_path", $_SERVER["PHP_SELF"]);
     ?>
-    <div>
+    <div id="customersContainer">
         <form action="<?= self_path ?>" method="post">
             <input type="text" placeholder="Search Users..." name="searchTerm">
             <button type="submit">Search</button>
         </form>
+        <br>
         <table style="border: groove;">
             <thead>
-                <th>ID</th>
+                <th style="border-right: 1px groove;">ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Gender</th>
@@ -49,7 +79,7 @@
                         if ($rezultati) {
                             foreach($rezultati as $row) {
                                 echo "<tr>";
-                                echo "<td>" . $row["id"] . "</td>";
+                                echo "<td class='tableDataId'>" . $row["id"] . "</td>";
                                 echo "<td>" . $row["firstName"] . "</td>";
                                 echo "<td>" . $row["lastName"] . "</td>";
                                 echo "<td>" . $row["gender"] . "</td>";
@@ -71,7 +101,9 @@
             </tbody>
             
             <tfoot>
-                lorem
+                <tr>
+                    <td colspan="5">2024 RHAE Inc.</td>
+                </tr>
             </tfoot>
         </table>
     </div>

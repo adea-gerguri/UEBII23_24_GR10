@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="logo, navigation">
+    <div class="logo, navigation" style="margin-left: 60%;">
         <a href="../index/index.php">
             <h1>RHAE</h1>
         </a>
