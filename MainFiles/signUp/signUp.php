@@ -101,7 +101,7 @@
 
                     <div class="form-group">
                         <label for="expiration_date">Expiration Date</label>
-                        <input name="expiration_date" type="text" class="form-control" id="expirationDate" placeholder="MM/YYYY" required>
+                        <input name="expiration_date" type="text" class="form-control" id="expirationDate" placeholder="DD-MM-YYYY" required>
                     </div>
 
                     <div class="form-group" onsubmit="return valideCVV()">
@@ -181,31 +181,31 @@
 
     </script>
      <script>
-        function showCookieConsent() {
-            var consent = confirm("This website uses cookies to ensure you get the best experience. Do you want to allow cookies?");
-            if (!consent) {
-                alert("You have chosen not to allow cookies. Some features of the website may not work properly.");
-                window.location.href = "../HomePage/index.php"; //go back to home
-            }
-        }
-        window.onload = showCookieConsent;
+        // function showCookieConsent() {
+        //     var consent = confirm("This website uses cookies to ensure you get the best experience. Do you want to allow cookies?");
+        //     if (!consent) {
+        //         alert("You have chosen not to allow cookies. Some features of the website may not work properly.");
+        //         window.location.href = "../HomePage/index.php"; 
+        //     }
+        // }
+        // window.onload = showCookieConsent;
     </script>
 
     <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $card_number = $_POST['card_number'];
-            $cvv = $_POST['cvv'];
-            $expiration_date = $_POST['expiration_date'];
+        // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        //     $card_number = $_POST['card_number'];
+        //     $cvv = $_POST['cvv'];
+        //     $expiration_date = $_POST['expiration_date'];
 
-            //Cookies per 30 dite
-            setcookie('card_number', $card_number, time() + (86400 * 30), "/"); 
-            setcookie('cvv', $cvv, time() + (86400 * 30), "/"); 
-            setcookie('expiration_date', $expiration_date, time() + (86400 * 30), "/"); 
+        //     //Cookies per 30 dite
+        //     setcookie('card_number', $card_number, time() + (86400 * 30), "/"); 
+        //     setcookie('cvv', $cvv, time() + (86400 * 30), "/"); 
+        //     setcookie('expiration_date', $expiration_date, time() + (86400 * 30), "/"); 
 
-        }
-        else {
-            echo "<script>alert('Try inputing the card information first please!');</script>";
-        }
+        // }
+        // else {
+        //     echo "<script>alert('Try inputing the card information first please!');</script>";
+        // }
     ?>
 
 </body>

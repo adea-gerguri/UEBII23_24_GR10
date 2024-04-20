@@ -13,7 +13,7 @@
         <li><a href="../WomanPage/dress.php">DRESS</a></li>
         <li><a href="../WomanPage/bags.php">BAGS</a></li>
         <li><a href="../WomanPage/casual.php">CASUALS</a></li>
-        <li><a href="../WomanPage/shoes/shoes.php">SHOES</a></li>
+      
         <BR></BR>
         <li>KIDS</li>
         <li><a href="../KidsPage/kidsHoodies.php">HOODIES</a></li>
@@ -26,23 +26,23 @@
         <li><a href="../HomePage/index.php">HOME</a></li>
         <li><a href="../AboutUs/Aboutus.php">ABOUT</a></li>
         <?php
-session_start();
-if (isset($_SESSION['user_fullname'])) {
-    // If user is logged in, display dropdown
-        echo '<li class="dropdown" style="margin-left:-200px;">';
-        echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $_SESSION['user_fullname'] . '<b class="caret"></b></a>';
-        echo '<ul class="dropdown-menu">';
-        echo '<li><a href="../signUp/logout.php">Logout</a></li>';
-        echo '</ul>';
-        echo '</li>';
-    }
-
-?>
+        // var_dump($_SESSION);
+           
+            session_start();
+            
+            // Check if user is logged in
+            if(isset($_SESSION['user_name'])) {
+                // Display user's name
+                echo '<a href="../user/user.php"><li style="margin-top:25px;">' . $_SESSION['user_name'] . '</li></a>';
+                echo '<a href="../signUp/logout.php"><i class="bi bi-box-arrow-left"></i></a>';
+            } else {
+                // If user is not logged in, display login link
+                echo '<li><a href="../signUp/signUp.php" target="_self"><i class="bi bi-person-circle"></i></a></li>';
+            }
+            ?>
     
-
-        <li style="margin-top:-75px; margin-right:-30px;"><a href="../signUp/logout.php" target="_self"></a><i class="bi bi-box-arrow-left"></i></li>
-
-        <li><a href="../signUp/signUp.php" target="_self"><i class="bi bi-person-circle"></i></a></li>
+<!-- 
+        <li><a href="../signUp/signUp.php" target="_self"><i class="bi bi-person-circle"></i></a></li> -->
         <li><a href="../Cart/cart.html" onclick="viewCart()"><i class="bi bi-bag"></i></a></li>
         <li onclick=showSidebar()><a href="#"><i class="bi bi-list"></i></a></li>
     </ul>
