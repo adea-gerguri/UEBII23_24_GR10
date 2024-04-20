@@ -8,20 +8,9 @@
     </head>
 
     <body>
-        <header class="header">
-            <div class="logo, navigation">
-                <a href="../index/index.php"><h1>RHAE</h1></a>
-            </div>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="../index/index.php">Home</a></li>
-                    <li><a href="../products/products.php">Products</a></li>
-                    <li><a href="../orders/orders.php">Orders</a></li>
-                    <li><a href="../customers/customers.php">Customers</a></li>
-                </ul>
-            </nav>
-        </header>
         
+        <?php include "../HeaderFooter/header/header.php"?>    
+
         <main class="main">
             <section class="overview">
                 <h2>Overview</h2>
@@ -150,8 +139,6 @@
             </section>
         </main>
 
-        <footer class="footer">
-            <p>&copy; 2024 RHAE Inc.</p>
-        </footer>
+        <?php include "../HeaderFooter/footer/footer.php" ?>
     </body>
 </html>
