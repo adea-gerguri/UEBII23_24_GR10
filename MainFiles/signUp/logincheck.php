@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_name'] = $user['firstName'];
 
             // Save email and password in an array
-            $credentials = ['email' => $email, 'password' => $password];
+            $credentials = ['email' => $email];
 
             // Serialize the array
             $credentialsSerialized = serialize($credentials);

@@ -28,17 +28,17 @@
         <?php
         // var_dump($_SESSION);
            
+        function displayNavigationLinks() {
             session_start();
-            
-            // Check if user is logged in
+        
             if(isset($_SESSION['user_name'])) {
-                // Display user's name
                 echo '<a href="../user/user.php"><li style="margin-top:25px;">' . $_SESSION['user_name'] . '</li></a>';
                 echo '<a href="../signUp/logout.php"><i class="bi bi-box-arrow-left"></i></a>';
             } else {
-                // If user is not logged in, display login link
                 echo '<li><a href="../signUp/signUp.php" target="_self"><i class="bi bi-person-circle"></i></a></li>';
             }
+        }
+        displayNavigationLinks();
             ?>
     
 <!-- 
