@@ -4,7 +4,7 @@ class DatabaseUtil {
     private static $host = 'localhost';
     private static $dbname = 'web2';
     private static $username = 'root';
-    private static $password = '080893';
+    private static $password = '';
     private static $port = 3306;
 
     private static $connection = null;

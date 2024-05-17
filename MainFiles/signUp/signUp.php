@@ -191,6 +191,9 @@
         // window.onload = showCookieConsent;
     </script>
 
+
+
+
     <?php
         // if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //     $card_number = $_POST['card_number'];
