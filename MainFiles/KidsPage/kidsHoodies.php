@@ -24,68 +24,142 @@
            margin: auto;
            margin-top: -25px;
         }
+        #sortButtons {
+    text-align: center; /* Qendra butonat në div */
+}
+
+.submit-button {
+    background-color: gray; /* Ngjyra e sfondit */
+    color: #fff; /* Ngjyra e tekstit */
+    border: 1px solid #007bff; /* Kufiri */
+    padding: 6px 12px; /* Gjerësia dhe lartësia e padding */
+    border-radius: 4px; /* Forma e këndit */
+    cursor: pointer; /* Kursori kur kalon mbi butonin */
+    transition: background-color 0.3s, color 0.3s; /* Tranzicioni i ngjyrës dhe ngjyrës së tekstit kur kalon mbi butonin */
+    margin: 5px; /* Hapësira e brendshme midis butonave */
+}
+
+/* Stili për hover-in */
+.submit-button:hover {
+    background-color: #0056b3; /* Ngjyra e sfondit në hover */
+    color: #fff; /* Ngjyra e tekstit në hover */
+}
+
     </style>
     <title>Hoodies</title>
 </head>
 <body>
 
     <div id="header"></div>
-
     <div class="container-fluid">
-        <div  class="row">
-            <div class="col-md-4">
-                <a class="linkToBuy"  onclick="openPopup()">
-                <img alt="NikeShoes" class="firstImage" src="../../KidsImages/kidsHodies/imageedit_7_7424565596.png">
-                <p class=" firstParagraph">Zipped Technical Long-Sleeved Top</p>
-                <p class="qmimi">400$</p>
-                <p class="goToProduct">Go To Product</p>
-            </a>
-            </div>
-            <div class="col-md-4">
-                <a class="linkToBuy"  onclick="openPopup()">
-                    <img alt="NikeShoes" class="firstImage" src="../../KidsImages/kidsHodies/imageedit_8_9419444869.png">
-                    <p class="firstParagraph">Embroidered Cotton Sweatshirt </p>
-                    <p class="qmimi">520$</p>
-                    <p class="goToProduct">Go To Product</p>
-                </a>            </div>
-            <div class="col-md-4">     <a class="linkToBuy"  onclick="openPopup()">
-                <img  alt="NikeShoes" class="firstImage" src="../../KidsImages/kidsHodies/imageedit_10_8812054538.png ">
-                <p class="firstParagraph">Chunky Wool Cardigan
-                </p>
-                <p class="qmimi">1002$</p>
-                <p class="goToProduct">Go To Product</p>
-            </a></div>
-           
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <a class="linkToBuy"  onclick="openPopup()">
-                    <img alt="NikeShoes" class="firstImage" src="../../KidsImages/kidsHodies/imageedit_11_8722865429.png">
-                    <p class="firstParagraph">Monogram Zipped Velvet Hoodie </p>
-                    <p class="qmimi">900$</p>
-                    <p class="goToProduct">Go To Product</p>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a class="linkToBuy"  onclick="openPopup()">
-                    <img alt="NikeShoes" class="firstImage" src="../../KidsImages/kidsHodies/imageedit_12_2184711225.png">
-                    <p class="firstParagraph">CHESS PRINT HOODIE
-
-                    </p>
-                    <p class="qmimi">900$</p>
-                    <p class="goToProduct">Go To Product</p>
-                </a>
-            </div>
-            <div class="col-md-4">     <a class="linkToBuy" onclick="openPopup()">
-                <img alt="NikeShoes" class="firstImage" src="../../KidsImages/kidsHodies/imageedit_13_3713525364.png">
-                <p class="firstParagraph">Wool Blend Crewneck </p>
-                <p class="qmimi">720$</p>
-                <p class="goToProduct">Go To Product</p>
-            </a></div>
-           
-        </div>
-  
+    <div class="row">
+        <button id="sortButton" onclick="toggleSorting()">Sort Products</button>
     </div>
+
+    <div id="sortButtons">
+    <form id="sortForm" method="get">
+</br>
+        <!-- Butoni për asortim -->
+        <button type="submit" name="method" value="asort" class="submit-button">Sort by price (asc)</button>
+        <!-- Butoni për arsortim -->
+        <button type="submit" name="method" value="arsort" class="submit-button">Sort by price (desc)</button>
+    </form>
+    </div>
+
+
+
+
+    <div class="row">
+    <?php
+$products = array(
+    array('content' => "<div class='col-md-4'>
+                        <a class='linkToBuy' onclick='openPopup()'>
+                            <img alt='NikeShoes' class='firstImage' src='../../KidsImages/kidsHodies/imageedit_7_7424565596.png'>
+                            <p class='firstParagraph'>Zipped Technical Long-Sleeved Top</p>
+                            <p class='qmimi'>400$</p>
+                            <p class='goToProduct'>Go To Product</p>
+                        </a>
+                        </div>",
+                        'price' => 400),
+    array('content' => "<div class='col-md-4'>
+                        <a class='linkToBuy' onclick='openPopup()'>
+                            <img alt='NikeShoes' class='firstImage' src='../../KidsImages/kidsHodies/imageedit_8_9419444869.png'>
+                            <p class='firstParagraph'>Embroidered Cotton Sweatshirt</p>
+                            <p class='qmimi'>520$</p>
+                            <p class='goToProduct'>Go To Product</p>
+                        </a>
+                        </div>",
+                        'price' => 520),
+    array('content' => "<div class='col-md-4'>
+                        <a class='linkToBuy' onclick='openPopup()'>
+                            <img alt='NikeShoes' class='firstImage' src='../../KidsImages/kidsHodies/imageedit_13_3713525364.png'>
+                            <p class='firstParagraph'>Wool Blend Crewneck</p>
+                            <p class='qmimi'>720$</p>
+                            <p class='goToProduct'>Go To Product</p>
+                        </a>
+                        </div>",
+                        'price' => 720),
+    array('content' =>"<div class='col-md-4'>
+                        <a class='linkToBuy' onclick='openPopup()'>
+                            <img  alt='NikeShoes' class='firstImage' src='../../KidsImages/kidsHodies/imageedit_10_8812054538.png '>
+                            <p class='firstParagraph'>Chunky Wool Cardigan</p>
+                            <p class='qmimi'>1002$</p>
+                            <p class='goToProduct'>Go To Product</p>
+                        </a>
+                        </div>",
+                        'price' => 1002),
+    array('content' =>"<div class='col-md-4'>
+                        <a class='linkToBuy' onclick='openPopup()'>
+                            <img alt='NikeShoes' class='firstImage' src='../../KidsImages/kidsHodies/imageedit_11_8722865429.png'>
+                            <p class='firstParagraph'>Monogram Zipped Velvet Hoodie</p>
+                            <p class='qmimi'>900$</p>
+                            <p class='goToProduct'>Go To Product</p>
+                        </a>
+                        </div>",
+                        'price' => 900),
+    array('content' =>"<div class='col-md-4'>
+                        <a class='linkToBuy' onclick='openPopup()'>
+                            <img alt='NikeShoes' class='firstImage' src='../../KidsImages/kidsHodies/imageedit_12_2184711225.png'>
+                            <p class='firstParagraph'>CHESS PRINT HOODIE</p>
+                            <p class='qmimi'>900$</p>
+                            <p class='goToProduct'>Go To Product</p>
+                        </a>
+                        </div>",
+                        'price' => 900)
+);
+
+$sortingMethod = isset($_GET['method']) ? $_GET['method'] : '';
+
+if ($sortingMethod === 'asort' || $sortingMethod === 'arsort') {
+    $sortingFunction = $sortingMethod;
+} else {
+    $sortingFunction = 'arsort';
+}
+$prices = array();
+foreach ($products as $product) {
+    $prices[] = $product['price'];
+}
+
+$sortingFunction($prices);
+
+$sorted_products = array();
+foreach ($prices as $key => $price) {
+    $sorted_products[] = $products[$key]['content'];
+}
+?>
+
+<div id="header"></div>
+<div class="container-fluid">
+
+    <div class="row">
+        <?php
+        foreach ($sorted_products as $product) {
+            echo $product;
+        }
+        ?>
+    </div>
+</div>
+
 
     <div id="footer"></div>
         

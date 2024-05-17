@@ -70,7 +70,8 @@
 
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input name="email" type="email" class="form-control" id="email" placeholder="Enter your email" required value="example@mail.com" list="emailOptions">
+                        <input name="email" type="email" class="form-control" id="email" placeholder="Enter your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
                         <datalist id="emailOptions">
                             <option value="example@mail.com">
                             <option value="example@gmail.com">
@@ -79,6 +80,7 @@
                             <option value="example@student.uni-pr.edu">
                         </datalist>
                     </div>
+
 
                     <div class="form-group">
                         <label for="password">Password</label>
@@ -101,7 +103,7 @@
 
                     <div class="form-group">
                         <label for="expiration_date">Expiration Date</label>
-                        <input name="expiration_date" type="text" class="form-control" id="expirationDate" placeholder="DD-MM-YYYY" required>
+                        <input name="expiration_date" type="text" class="form-control" id="expirationDate" placeholder="YYYY-MM-DD" required>
                     </div>
 
                     <div class="form-group" onsubmit="return valideCVV()">
@@ -176,10 +178,11 @@
                 warning.textContent = 'Password is too weak.';
             }
         });
-   
-
 
     </script>
+
+    
+
      <script>
         // function showCookieConsent() {
         //     var consent = confirm("This website uses cookies to ensure you get the best experience. Do you want to allow cookies?");
@@ -190,9 +193,6 @@
         // }
         // window.onload = showCookieConsent;
     </script>
-
-
-
 
     <?php
         // if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/MainFiles/ContactUs/contactus.css">
+    <link rel="stylesheet" href="../ContactUs/contactus.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;1,100&display=swap" rel="stylesheet">
@@ -15,13 +15,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link href="/MainFiles/KidsPage/kidsShoes.css" rel="stylesheet">
+    <link href="../KidsPage/kidsShoes.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;1,100&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <link href="/MainFiles/KidsPage/checkout.css" rel="stylesheet"> 
-    <link href="/MainFiles/HeaderFooter/footerStyle.css" rel="stylesheet">
+    <link href="../KidsPage/checkout.css" rel="stylesheet"> 
+    <link href="../HeaderFooter/footerStyle.css" rel="stylesheet">
 
     <title>Contact Us</title>
 </head>
@@ -40,21 +40,26 @@
     <h1 class="talkToTeam">Talk to Our Team</h1>
     <p style="text-align: center; margin-top: 70px;" class="ref"></p>
 
-    <div>
-        <img class="peopleImages" src="/contactUsImages/07df39c3-7bf3-4d34-b731-874dbd45e1df_Courtney.jpg">
-        <img class="peopleImages" src="/contactUsImages/668c6e09-696b-496f-816c-98f1a56ac1df_Katee.jpg">
-        <img class="peopleImages" src="/contactUsImages/Arraya.jpeg">
-        <img class="peopleImages" src="/contactUsImages/xHvVdYx.png">
+<?php
+$people = array(
+    "Courtney" => "../../contactUsImages/Courtney.jpg",
+    "Katee" => "../../contactUsImages/Katee.jpg",
+    "Arraya" => "../../contactUsImages/Arraya.jpeg",
+    "Brittanys" => "../../contactUsImages/Brittanys.png"
+);
+ksort($people);
+?>
+<div>
+    <?php foreach ($people as $name => $image) { ?>
+        <img class="peopleImages" src="<?php echo $image; ?>">
+    <?php } ?>
+</div>
+<div>
+    <?php foreach ($people as $name => $image) { ?>
+        <p class="peopleNames"><?php echo $name; ?></p>
+    <?php } ?>
+</div>
 
-
-    </div>
-
-    <div>
-        <p class="peopleNames">Courtney</p>
-        <p class="peopleNames">Katee</p>
-        <p class="peopleNames">Arraya</p>
-        <p class="peopleNames">Brittanys</p>
-    </div>
 <!-- 
 
 

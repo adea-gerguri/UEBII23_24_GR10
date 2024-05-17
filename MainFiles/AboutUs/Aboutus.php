@@ -39,6 +39,7 @@
     
     </head>
 <body>
+    
     <div id="header"></div>
 
   <div class="title">
@@ -105,38 +106,38 @@
     
             </tr>
         </thead>
-          <tbody>
-            <tr>
-              <td >Founder</td>
-              <td>Artan &Ccedilitaku</td>
-              <td>MSC in Fashion Designing</td>
-              <td>20 years</td>
-            </tr>
-            <tr>
-                <td >CEO</td>
-                <td>Art&euml &Ccedilitaku</td>
-                <td>Industrial Engineering</td>
-                <td>5 years</td>
-            </tr>
-            <tr>
-                <td>CTO</td>
-                <td>Kim Ji-hye </td>
-                <td>Computer Science</td>
-                <td>3 years</td>
-            </tr>
-            <tr>
-                <td rowspan="2">CFO</td>
-                <td>Mike Yu</td>
-                <td>BA in Finance</td>
-                <td>4 years</td>
-            </tr>
-            <tr>
-                
-                <td style="padding-bottom: 5px;">&Eumlmbla Ra&ccedila</td>
-                <td> BA in Management</td>
-                <td>2 years</td>
-            </tr>
-        </tbody>
+          <tbody>      
+<?php
+$boardMembers = array(
+    array("Board Role" => "Founder", "Full Name" => "Artan Çitaku", "Education" => "MSC in Fashion Designing", "Years of Experience" => 20),
+    array("Board Role" => "CEO", "Full Name" => "Artë Çitaku", "Education" => "Industrial Engineering", "Years of Experience" => 5),
+    array("Board Role" => "CTO", "Full Name" => "Kim Ji-hye", "Education" => "Computer Science", "Years of Experience" => 3),
+    array("Board Role" => "CFO", "Full Name" => "Mike Yu", "Education" => "BA in Finance", "Years of Experience" => 4),
+    array("Board Role" => "CFO", "Full Name" => "Ëmbla Raça", "Education" => "BA in Management", "Years of Experience" => 2)
+);
+$experiences = array();
+foreach ($boardMembers as $key => $row) {
+    $experiences[$key] = $row['Years of Experience'];
+}
+sort($experiences);
+$sortedBoardMembers = array();
+foreach ($experiences as $experience) {
+    foreach ($boardMembers as $member) {
+        if ($member['Years of Experience'] == $experience) {
+            $sortedBoardMembers[] = $member;
+        }
+    }
+}
+foreach ($sortedBoardMembers as $member) {
+    echo "<tr>";
+    echo "<td>" . $member['Board Role'] . "</td>";
+    echo "<td>" . $member['Full Name'] . "</td>";
+    echo "<td>" . $member['Education'] . "</td>";
+    echo "<td>" . $member['Years of Experience'] . "</td>";
+    echo "</tr>";
+}
+?>
+    </tbody>
     </table>
     
   </div>
@@ -174,27 +175,57 @@
                       <li>Elevate your wardrobe with products carefully selected from renowned brands such as:
                           <ul class="sub-list">
                               <div class="row">
-                                  <div class="col-md-3">
-                                      <li id="brand1">Louis Vuitton</li>
-                                      <li id="brand2">PRADA</li>
-                                      <li>Nike</li>
-                                      <li>Chanel</li>
-                                  </div>
-                                  <div class="col-md-3">
-                                      <li>Hermes</li>
-                                      <li>Dior</li>
-                                      <li>Balenciaga</li>
+                              <div class="col-md-3">
+                            <?php
+                            echo "<br>";
+                            $brands = array(
+                                "Louis Vuitton",
+                                "PRADA",
+                                "Nike",
+                                "Chanel"
+                            );
+                            rsort($brands);
+                            foreach ($brands as $brand) {
+                                echo "<li>" . $brand . "</li>";
+                            }
+                            ?>
+                        </div>
+                        <div class="col-md-3">
+                            <?php
+                            echo "<br>";
+                            $other_brands = array(
+                                "Hermes",
+                                "Dior",
+                                "Balenciaga"
+                            );
+                            rsort($other_brands);
+                            foreach ($other_brands as $brand) {
+                                echo "<li>" . $brand . "</li>";
+                            }
+                            ?>
+                        </div>
+
                                   </div>
                               </div>
                           </ul>
                       </li>
-                      <li>Louis Vuitton - An emblem of timeless elegance and craftsmanship.</li>
-                      <li id="appendContent">Prada - Redefining contemporary fashion with innovation and style.</li>
-                      <li>Nike - Unleash the power of sportswear with cutting-edge design.</li>
-                      <li>Chanel - A symbol of timeless sophistication and iconic fashion.</li>
-                      <li>Hermes - Luxurious craftsmanship and the art of living with finesse.</li>
-                      <li>Dior - Fusion of classic and modern, embodying haute couture.</li>
-                      <li id="removeItem">Balenciaga - Pushing boundaries with <span id="removeContent">avant-garde</span> fashion and design.</li>
+                        <ul>
+                        <?php
+                        $brands = array(
+                            "Louis Vuitton" => "An emblem of timeless elegance and craftsmanship.",
+                            "Prada" => "Redefining contemporary fashion with innovation and style.",
+                            "Nike" => "Unleash the power of sportswear with cutting-edge design.",
+                            "Chanel" => "A symbol of timeless sophistication and iconic fashion.",
+                            "Hermes" => "Luxurious craftsmanship and the art of living with finesse.",
+                            "Dior" => "Fusion of classic and modern, embodying haute couture.",
+                            "Balenciaga" => "Pushing boundaries with avant-garde fashion and design."
+                        );
+                        krsort($brands);
+                        foreach ($brands as $brand => $description) {
+                            echo "<li>$brand - $description</li>";
+                        }
+                        ?>
+                        </ul>
                   </ul>
               </div>
           </div>
@@ -244,8 +275,6 @@
     ctx.stroke();
   </script>
   <script src="../AboutUs/aboutus.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
-    
-
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->  
 </body>
 </html>
