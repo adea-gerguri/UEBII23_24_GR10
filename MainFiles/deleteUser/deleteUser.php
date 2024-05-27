@@ -1,6 +1,10 @@
 <?php
 require_once '../signUp/DatabaseUtil.php'; // Ensure this path is correct
 
+// Set custom error and exception handlers
+set_error_handler('customErrorHandler');
+set_exception_handler('customExceptionHandler');
+
 function createDeletedUsersTable($conn) {
     $sql = "CREATE TABLE IF NOT EXISTS DeletedUsers (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -60,6 +64,7 @@ function deleteUser($email, $password) {
             throw new UserNotFoundException();
         }
     } catch (Exception $e) {
+        logException($e);
         echo displayError($e);
     }
 }
@@ -78,9 +83,46 @@ class UserNotFoundException extends Exception {
 // Function to display error messages
 function displayError($e) {
     if ($e instanceof UserNotFoundException) {
-        echo $e->getMessage();
+        return $e->getMessage();
     } else {
-        echo "An error occurred: " . $e->getMessage();
+        return "An error occurred: " . $e->getMessage();
+    }
+}
+
+// Function to log exceptions
+function logException($e) {
+    logErrorDetails($e->getMessage(), $e->getCode(), $e->getFile(), $e->getLine(), $e->getTrace());
+}
+
+// Custom error handler
+function customErrorHandler($errno, $errstr, $errfile, $errline, $errcontext) {
+    logErrorDetails($errstr, $errno, $errfile, $errline, $errcontext);
+    echo "An error occurred. Please try again later.";
+}
+
+// Custom exception handler
+function customExceptionHandler($e) {
+    logException($e);
+    echo displayError($e);
+}
+
+// Function to log error details
+function logErrorDetails($errstr, $errno, $errfile, $errline, $errcontext) {
+    $logFile = 'error_log.txt';
+    $errorDetails = sprintf(
+        "Error: [%d] %s\nFile: %s\nLine: %d\nContext: %s\n\n",
+        $errno,
+        $errstr,
+        $errfile,
+        $errline,
+        json_encode($errcontext, JSON_PRETTY_PRINT)
+    );
+
+    if ($file = fopen($logFile, 'a')) {
+        fwrite($file, $errorDetails);
+        fclose($file);
+    } else {
+        echo "Failed to log error.";
     }
 }
 ?>
