@@ -31,7 +31,7 @@ function changePassword($email, $currentPassword, $newPassword) {
                 $stmt->execute();
 
                 if ($stmt->rowCount() > 0) {
-                    echo "Password updated successfully.";
+                    echo "<script>window.location.href = './login.php';</script>";
                 } else {
                     throw new Exception("Failed to update password.");
                 }

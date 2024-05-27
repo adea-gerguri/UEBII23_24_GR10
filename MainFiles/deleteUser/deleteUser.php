@@ -49,7 +49,7 @@ function deleteUser($email, $password) {
                     $stmt->bindParam(':hashed_password', $hashedPassword);
                     $stmt->execute();
 
-                    echo "User deleted successfully.";
+                    echo "<script>window.location.href = '../signUp/login.php';</script>";
                 } else {
                     throw new UserNotFoundException();
                 }
