@@ -5,11 +5,11 @@
 #$username = "root";
 #$password = "gentzhushi";
 
-$host= "127.0.0.1";
+$host= "localhost";
 $username = "root";
 $password = "";
 $dbname = "web2";
 $port = 3307;
 
 
-echo"<script>console.log('shkun credsat!') </script>";
+// echo"<script>console.log('shkun credsat!') </script>";

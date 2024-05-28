@@ -29,7 +29,7 @@
                                 echo"<script> console.log('U lidhem me databaze per cmimiTotal.')</script>";
                                 
                                 # sql ngjashem si me java
-                                $sql = "select sum(price) as cmimiTotal from products;"; # qito me : perpara jon placeholders, sikur me jep vlera permes references n c++
+                                $sql = "select sum(price) as cmimiTotal from Men_Shoes;"; # qito me : perpara jon placeholders, sikur me jep vlera permes references n c++
                                 # ; # -> qikjo osht fiks per databazenn ton, veq e bojna uncomment
                                 $stmt = $pdo->query($sql); # statement
                                 $stmt->execute();   #$rezultati = $stmt->get_result()->fetch_assoc();
@@ -44,6 +44,7 @@
                                 }
                               } catch(Exception $e) {
                                 echo "Error 404; No Database Connection";
+                                echo "test";
                                 echo"<script>console.log(\"Gabim ne [index.php] gjate lidhjes me Databaze: " . $e->getMessage() . "\") </script>";
                               }
                         ?>
