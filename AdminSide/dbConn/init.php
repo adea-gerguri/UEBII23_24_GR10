@@ -12,4 +12,4 @@ $dbname = "web2";
 $port = 3307;
 
 
-// echo"<script>console.log('shkun credsat!') </script>";
+echo"<script>console.log('shkun credsat!') </script>";
