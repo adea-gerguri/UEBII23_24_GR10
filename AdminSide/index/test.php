@@ -6,6 +6,8 @@
     <title>RHAE Admin Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
     <?php 
         include '../dbConn/init.php';
         include "../dbConn/objects.php";
@@ -23,8 +25,8 @@
                 <li><a href="#orders"><i class="fas fa-shopping-cart"></i> Orders</a></li>
                 <li><a href="#customers"><i class="fas fa-users"></i> Customers</a></li>
                 <li><a href="#settings"><i class="fas fa-cogs"></i> Settings</a></li>
+                <li><a href="#email" onclick="loadNewContent('./emailSend.php', 'main-content')"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></li>
             </ul>
-            
         </div>
         <div class="main-content" id="main-content">
             <div id="dashboard">
@@ -122,7 +124,7 @@
                             <th>Name</th>
                             <th>Price</th>
                             <th>Stock</th>
-                            <th>Action</th>
+                            <th>Occasion</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -182,8 +184,10 @@
             <div id="customers">
                 <h2>Customers</h2>
                 <form action="<?= self_path ?>" method="post">
-                    <input type="text" name="searchTerm" id="searchTerm" name="searchTerm" placeholder='Search...'>
-                    <input type="submit" value="Search">
+                    <input type="text" name="searchTerm" id="searchTerm" name="searchTerm" placeholder='Name...'>
+                    <button onclick="submitForm()" style="background-color: NULL;">
+                    <i class="fa fa-search" aria-hidden="true"></i> Search
+                    </button>
                 </form>
                 <table>
                     <thead>
@@ -245,11 +249,11 @@
             <h2>Add Product</h2>
             <form id="productForm">
                 <label for="productName">Name:</label>
-                <input type="text" id="productName" name="productName" required>
+                <input type="text" id="productName" name="productName" required> <br>
                 <label for="productPrice">Price:</label>
-                <input type="number" id="productPrice" name="productPrice" required>
+                <input type="number" id="productPrice" name="productPrice" required> <br>
                 <label for="productStock">Stock:</label>
-                <input type="number" id="productStock" name="productStock" required>
+                <input type="number" id="productStock" name="productStock" required> <br>
                 <button type="submit">Save</button>
             </form>
         </div>

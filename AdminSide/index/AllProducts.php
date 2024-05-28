@@ -1,29 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        <br> <h4> General </h4>
-        <button class="add-btn" onclick=" "> Casual Wear </button>
-        <button class="add-btn" onclick=" "> Dresses </button>
-        <button class="add-btn" onclick=" "> Holiday Specials </button>
-        <br> <h4> Kids </h4>
-        <button class="add-btn" onclick=" "> Kids Hoodies </button>
-        <button class="add-btn" onclick=" "> Kids Jacket Coats </button>
-        <button class="add-btn" onclick=" "> Kids Shoes </button>
-        <br> <h4> Men </h4>
-        <button class="add-btn" onclick=" "> Men Pants </button>
-        <button class="add-btn" onclick=" "> Men Shoes </button>
-        <button class="add-btn" onclick=" "> Men Sweaters </button>
-        <button class="add-btn" onclick=" "> Men Tshirts </button>
-        <hr>
-    </div>
+<html>
+    <body>
+        <div>
+            <br> <h4> General </h4>
+            <button class="add-btn" onclick=" "> Casual Wear </button>
+            <button class="add-btn" onclick=" "> Dresses </button>
+            <button class="add-btn" onclick=" "> Holiday Specials </button>
+            <br> <h4> Kids </h4>
+            <button class="add-btn" onclick=" "> Kids Hoodies </button>
+            <button class="add-btn" onclick=" "> Kids Jacket Coats </button>
+            <button class="add-btn" onclick=" "> Kids Shoes </button>
+            <br> <h4> Men </h4>
+            <button class="add-btn" onclick=" "> Men Pants </button>
+            <button class="add-btn" onclick=" "> Men Shoes </button>
+            <button class="add-btn" onclick=" "> Men Sweaters </button>
+            <button class="add-btn" onclick=" "> Men Tshirts </button>
+            <hr>
+        </div>
+        <div id="allProducts">
 
-</body>
+            <?php
+                echo"Qitu vijn ka 3 diva";
+            ?>
+
+        </div>
+    </body>
 </html>
 
 <?php

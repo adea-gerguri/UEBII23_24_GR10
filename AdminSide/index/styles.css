@@ -141,7 +141,7 @@ th {
     cursor: pointer;
 }
 
-form {
+form#productForm {
     display: flex;
     flex-direction: column;
 }
@@ -168,4 +168,31 @@ form button {
 
 form button:hover {
     background: #218838;
+}
+
+#emailForm{
+    margin-top: 5%;
+    margin-left: 10%;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    display: inline;
+}
+
+/* .emailForm{
+    margin-top: 15%;
+    margin-left: 0%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+} */
+
+.emailForm input{
+    width: 200%;
+}
+
+.emailForm textarea{
+    width: 300%;
+    height: 300%;
 }
