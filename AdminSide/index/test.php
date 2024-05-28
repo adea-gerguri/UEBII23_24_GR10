@@ -11,11 +11,12 @@
         include "../dbConn/objects.php";
         define("self_path", $_SERVER["PHP_SELF"]);
     ?>
+
 </head>
 <body>
     <div class="container">
         <div class="sidebar">
-            <h2 onclick="loadNewContent('./main-content', 'main-content')">RHAE <br> Admin Dashboard</h2>
+            <h2 onclick='location.reload()'>RHAE <br> Admin Dashboard</h2>
             <ul>
                 <li><a href="#dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                 <li><a href="#products"><i class="fas fa-box"></i> Products</a></li>
@@ -148,8 +149,9 @@
                                     echo "<td>" . $row["Holiday_Name"] . "</td>";
                                     echo "</tr>";
                                 }
+
                             } else {
-                                echo "<tr colspan=\"5\">WE GOT NO CLIENTS</tr>";
+                                echo "<tr><td>WE GOT NO CLIENTS</td></tr>";
                             }
                         } catch (Exception $e) {
                             echo "<tr colspan=\"5\">Error 404; No Database Connection</tr>";
@@ -179,6 +181,10 @@
             </div>
             <div id="customers">
                 <h2>Customers</h2>
+                <form action="<?= self_path ?>" method="post">
+                    <input type="text" name="searchTerm" id="searchTerm" name="searchTerm" placeholder='Search...'>
+                    <input type="submit" value="Search">
+                </form>
                 <table>
                     <thead>
                         <tr>
@@ -190,38 +196,37 @@
                     </thead>
                     <tbody>
                         <?php
-
-                        try {
-                            $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
-                            $pdo = new PDO($dsn, $username, $password);
-                            $searchTerm = $_POST["searchTerm"];
-                            if(isset($searchTerm)){
-                                $sql = "SELECT * FROM Users WHERE firstName LIKE \"%{$searchTerm}%\" or lastName like \"%{$searchTerm}%\"";
-                            } else {
-                                $sql = "SELECT id, firstName, lastName, gender, email FROM Users";
-                            }
-                            $stmt = $pdo->query($sql);
-                            $stmt->execute();
-                            $rezultati = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                            # var_dump($stmt);
-                            # echo "<br><br><br><br><br>";
-                            # var_dump($rezultati);
-                            if ($rezultati) {
-                                foreach($rezultati as $row) {
-                                    echo "<tr>";
-                                    echo "<td class='tableDataId'>" . $row["id"] . "</td>";
-                                    echo "<td>" . $row["firstName"] . " " .  $row["lastName"] . "</td>";
-                                    # echo "<td>" . $row["lastName"] . "</td>";
-                                    echo "<td>" . $row["gender"] . "</td>";
-                                    echo "<td>" . $row["email"] . "</td>";
-                                    echo "</tr>";
+                            try {
+                                $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+                                $pdo = new PDO($dsn, $username, $password);
+                                $searchTerm = $_POST["searchTerm"];
+                                if(isset($searchTerm)){
+                                    $sql = "SELECT id, firstName, lastName, gender, email FROM Users WHERE firstName LIKE \"%{$searchTerm}%\" or lastName like \"%{$searchTerm}%\"";
+                                } else {
+                                    $sql = "SELECT id, firstName, lastName, gender, email FROM Users";
                                 }
-                            } else {
-                                echo "<tr colspan=\"5\">WE GOT NO CLIENTS</tr>";
+                                $stmt = $pdo->query($sql);
+                                $stmt->execute();
+                                $rezultati = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                # var_dump($stmt);
+                                # echo "<br><br><br><br><br>";
+                                # var_dump($rezultati);
+                                if ($rezultati) {
+                                    foreach($rezultati as $row) {
+                                        echo "<tr>";
+                                        echo "<td class='tableDataId'>" . $row["id"] . "</td>";
+                                        echo "<td>" . $row["firstName"] . " " .  $row["lastName"] . "</td>";
+                                        # echo "<td>" . $row["lastName"] . "</td>";
+                                        echo "<td>" . $row["gender"] . "</td>";
+                                        echo "<td>" . $row["email"] . "</td>";
+                                        echo "</tr>";
+                                    }
+                                } else {
+                                    echo "<tr colspan=\"5\">WE GOT NO CLIENTS</tr>";
+                                }
+                            } catch (Exception $e) {
+                                echo "<tr colspan=\"5\">Error 404; No Database Connection</tr>";
                             }
-                        } catch (Exception $e) {
-                            echo "<tr colspan=\"5\">Error 404; No Database Connection</tr>";
-                        }
                         ?>
                     </tbody>
                 </table>
