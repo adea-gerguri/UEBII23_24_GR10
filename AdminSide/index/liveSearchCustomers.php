@@ -3,21 +3,26 @@
     try {
         // $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
         // $pdo = new PDO($dsn, $username, $password);
-        $con = mysqli_connect($host, $username, $password, $dbname, $port);          
-        // var_dump($con);
-        echo "<tr>";
-        echo "<tr><td class='tableDataId' colspan=\"4\">test  statik 1</td></tr>";
-        echo "</tr> <br>";
-        
-        if(isset($_POST["searchTerm"])){
-            echo "<tr><td class='tableDataId' colspan=\"4\">test  statik 123</td></tr>";
+        include "./AdminSide/dbConn/init.php";
+        // echo "<tr><td class='tableDataId' colspan=\"4\">tdhanat: $host, $password, $username, $dbname, $port</td></tr>";
 
-            $input = $_POST["searchTerm"];
+        $con = mysqli_connect('localhost', 'root', '', 'web2', '3307');          
+        // var_dump($con);
+
+        // echo "<tr><td class='tableDataId' colspan=\"4\">test  statik 1</td></tr>";
+        // echo "<tr><td class='tableDataId' colspan=\"4\">" . var_dump($_POST) . "</td></tr>";
+        // echo "<tr><td class='tableDataId' colspan=\"4\">" . var_dump($_GET) . "</td></tr>";
+
+
+        if(isset($_POST["input"])){
+            // 
+            $input = $_POST["input"];
             $sql = "SELECT id, firstName, lastName, gender, email FROM Users WHERE firstName LIKE \"%{$input}%\" or lastName like \"%{$input}%\"";
         } else {
-            echo "<tr><td class='tableDataId' colspan=\"4\">test  statik 321</td></tr>";
-            $sql = "SELECT id, firstName, lastName, gender, email FROM Users"; # qe me ta load para se me bo submit
+            // echo "<tr><td class='tableDataId' colspan=\"4\">test  statik 321</td></tr>";
+            $sql = "SELECT id, firstName, lastName, gender, email FROM Users";
         }
+        // echo "<tr><td class='tableDataId' colspan=\"4\">$sql</td></tr>";
         $resultSet = mysqli_query($con, $sql);
         if(mysqli_num_rows($resultSet) > 0) {
             while ($row = mysqli_fetch_assoc($resultSet)){
@@ -51,6 +56,6 @@
         //     echo "<tr colspan=\"5\">WE GOT NO CLIENTS</tr>";
         // }
     } catch (Exception $e) {
-        echo "<tr colspan=\"4\"><td>Error 404; No Database Connection</td></tr>";
+        echo "<tr colspan=\"4\"><td>" . $e->getMessage() . "</td></tr>";
     }
 ?>

@@ -183,7 +183,7 @@
             <div id="customers">
                 <h2>Customers</h2>
                 <!-- <form action="<?= self_path ?>" method="post"> -->
-                <form>
+                <form method="post">
                     <input type="text" name="searchTerm" id="searchTerm" name="searchTerm" placeholder='Name...' autocomplete="off">
                     <!-- submitoje -->
                     <button onclick="submitForm()" style="background-color: NULL;">
@@ -292,8 +292,9 @@
                 var searchTerm = $('#searchTerm').val();
                 // console.log("ghetto geasy");
                 // console.log(input);
+                // alert(searchTerm);
                 
-                if(searchTerm!=""){
+                // if(searchTerm!=""){
                     // document.writeln(input);
                     $.ajax({
                         url: "liveSearchCustomers.php",
@@ -306,10 +307,10 @@
                             console.log(data);
                         }
                     })
-                } else {
-                    // alert("empty");
-                    console.log("input is empty");
-                }
+                // } else {
+                //     // alert("empty");
+                //     console.log("input is empty");
+                // }
             })
         })
     </script>    
