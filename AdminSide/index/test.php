@@ -9,9 +9,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     
     <?php 
-    include '../dbConn/init.php';
-    include "../dbConn/objects.php";
-    define("self_path", $_SERVER["PHP_SELF"]);
+        include '../dbConn/init.php';
+        include "../dbConn/objects.php";
+        define("self_path", $_SERVER["PHP_SELF"]);
     ?>
     
 </head>
@@ -36,31 +36,31 @@
                         <h3>Total Sales</h3>
                         <p>
                             <?php 
-                            try {
-                                # echo"<script> console.log(\"test\") </script>";
-                                # $conn = new mysqli($servername, $username, $password, $database, $port); # qitu osht errori
-                                $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
-                                $pdo = new PDO($dsn, $username, $password);
-                                # echo"<script> console.log('U lidhem me databaze per cmimiTotal.')</script>";
-                                
-                                # sql ngjashem si me java
-                                $sql = "select sum(price) as cmimiTotal from Men_Shoes;"; # qito me : perpara jon placeholders, sikur me jep vlera permes references n c++
-                                # ; # -> qikjo osht fiks per databazenn ton, veq e bojna uncomment
-                                $stmt = $pdo->query($sql); # statement
-                                $stmt->execute();   #$rezultati = $stmt->get_result()->fetch_assoc();
-                                
-                                $rezultati = $stmt->fetch(PDO::FETCH_ASSOC); # u perdor vargu i asocium!
-                                #echo"<script> console.log('ledri vula')</script>";
-                                if($rezultati){
-                                    #var_dump($rezultati);
-                                    echo "$" . $rezultati["cmimiTotal"];
-                                } else {
-                                    echo 'Error 404; No Result';
+                                try {
+                                    # echo"<script> console.log(\"test\") </script>";
+                                    # $conn = new mysqli($servername, $username, $password, $database, $port); # qitu osht errori
+                                    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+                                    $pdo = new PDO($dsn, $username, $password);
+                                    # echo"<script> console.log('U lidhem me databaze per cmimiTotal.')</script>";
+                                    
+                                    # sql ngjashem si me java
+                                    $sql = "select sum(price) as cmimiTotal from Men_Shoes;"; # qito me : perpara jon placeholders, sikur me jep vlera permes references n c++
+                                    # ; # -> qikjo osht fiks per databazenn ton, veq e bojna uncomment
+                                    $stmt = $pdo->query($sql); # statement
+                                    $stmt->execute();   #$rezultati = $stmt->get_result()->fetch_assoc();
+                                    
+                                    $rezultati = $stmt->fetch(PDO::FETCH_ASSOC); # u perdor vargu i asocium!
+                                    #echo"<script> console.log('ledri vula')</script>";
+                                    if($rezultati){
+                                        #var_dump($rezultati);
+                                        echo "$" . $rezultati["cmimiTotal"];
+                                    } else {
+                                        echo 'Error 404; No Result';
+                                    }
+                                } catch(Exception $e) {
+                                    echo"<script>console.log(\"Gabim ne [index.php] gjate lidhjes me Databaze: " . $e->getMessage() . "\") </script>";
+                                    echo "Error 404; No Database Connection";
                                 }
-                            } catch(Exception $e) {
-                                echo"<script>console.log(\"Gabim ne [index.php] gjate lidhjes me Databaze: " . $e->getMessage() . "\") </script>";
-                                echo "Error 404; No Database Connection";
-                            }
                             ?>
                         </p>
                     </div>
@@ -68,22 +68,22 @@
                         <h3>New Orders</h3>
                         <p>
                             <?php
-                            try{
-                                $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
-                                $pdo = new PDO($dsn, $username, $password);
-                                $sql = "SELECT COUNT(ID) AS numriPorosive FROM orders WHERE OrderDate >= CURDATE() - INTERVAL 1 WEEK;";
-                                $stmt = $pdo->query($sql);
-                                echo"<script>console.log(\"ledri vula\")</script>";
-                                $stmt->execute();
-                                $rezultati = $stmt->fetch(PDO::FETCH_ASSOC);
-                                if ($rezultati){
-                                    echo $rezultati["numriPorosive"];
-                                } else {
-                                    echo "No New Orders";
+                                try{
+                                    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+                                    $pdo = new PDO($dsn, $username, $password);
+                                    $sql = "SELECT COUNT(ID) AS numriPorosive FROM orders WHERE OrderDate >= CURDATE() - INTERVAL 1 WEEK;";
+                                    $stmt = $pdo->query($sql);
+                                    echo"<script>console.log(\"ledri vula\")</script>";
+                                    $stmt->execute();
+                                    $rezultati = $stmt->fetch(PDO::FETCH_ASSOC);
+                                    if ($rezultati){
+                                        echo $rezultati["numriPorosive"];
+                                    } else {
+                                        echo "No New Orders";
+                                    }
+                                } catch (Exception $e){
+                                    echo"Error 404; No Database Connection";
                                 }
-                            } catch (Exception $e){
-                                echo"Error 404; No Database Connection";
-                            }
                             ?>
                         </p>
                     </div>
@@ -91,22 +91,22 @@
                         <h3>New Customers</h3>
                         <p>
                             <?php
-                            try{
-                                $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
-                                $pdo = new PDO($dsn, $username, $password);
-                                $sql = "SELECT COUNT(ID) AS newCustomers FROM users WHERE regDate >= CURDATE() - INTERVAL 1 WEEK;";
-                                $stmt = $pdo->query($sql);
-                                echo"<script>console.log(\"ledri vula\")</script>";
-                                $stmt->execute();
-                                $rezultati = $stmt->fetch(PDO::FETCH_ASSOC);
-                                if ($rezultati){
-                                    echo $rezultati["newCustomers"];
-                                } else {
-                                    echo "No New Orders";
+                                try{
+                                    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+                                    $pdo = new PDO($dsn, $username, $password);
+                                    $sql = "SELECT COUNT(ID) AS newCustomers FROM users WHERE regDate >= CURDATE() - INTERVAL 1 WEEK;";
+                                    $stmt = $pdo->query($sql);
+                                    echo"<script>console.log(\"ledri vula\")</script>";
+                                    $stmt->execute();
+                                    $rezultati = $stmt->fetch(PDO::FETCH_ASSOC);
+                                    if ($rezultati){
+                                        echo $rezultati["newCustomers"];
+                                    } else {
+                                        echo "No New Orders";
+                                    }
+                                } catch (Exception $e){
+                                    echo"Error 404; No Database Connection";
                                 }
-                            } catch (Exception $e){
-                                echo"Error 404; No Database Connection";
-                            }
                             ?>
                         </p>
                     </div>
@@ -129,21 +129,20 @@
                     </thead>
                     <tbody>
                         <?php
-                        
-                        try {
-                            $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
-                            $pdo = new PDO($dsn, $username, $password);
-                            $sql = "SELECT Special_ID, Name, Price, count(Special_ID) AS Count, Holiday_Name FROM Holiday_Specials GROUP BY Special_ID ";                                
-                            $stmt = $pdo->query($sql);
-                            // echo"ckemi :)";
-                            $stmt->execute();
-                            $rezultati = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                            // var_dump($stmt);
-                            # echo "<br><br><br><br><br>";
-                            // var_dump($rezultati);
-                            if ($rezultati) {
-                                foreach($rezultati as $row) {
-                                    echo "<tr>";
+                            try {
+                                $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+                                $pdo = new PDO($dsn, $username, $password);
+                                $sql = "SELECT Special_ID, Name, Price, count(Special_ID) AS Count, Holiday_Name FROM Holiday_Specials GROUP BY Special_ID ";                                
+                                $stmt = $pdo->query($sql);
+                                // echo"ckemi :)";
+                                $stmt->execute();
+                                $rezultati = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                // var_dump($stmt);
+                                # echo "<br><br><br><br><br>";
+                                // var_dump($rezultati);
+                                if ($rezultati) {
+                                    foreach($rezultati as $row) {
+                                        echo "<tr>";
                                         echo "<td class='tableDataId'>" . $row["Special_ID"] . "</td>";
                                         echo "<td>" . $row["Name"] . "</td>";
                                         echo "<td>" . $row["Price"] . "</td>";
