@@ -169,8 +169,3 @@ form button {
 form button:hover {
     background: #218838;
 }
-
-#logoHome:hover{
-    cursor: pointer;
-    color: rgb(208, 208, 208);
-}
