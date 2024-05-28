@@ -181,10 +181,13 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- customer form -->
             <div id="customers">
                 <h2>Customers</h2>
-                <form action="<?= self_path ?>" method="post">
+                <form action="<?= self_path ?>" method="post" id="customerForm">
                     <input type="text" name="searchTerm" id="searchTerm" name="searchTerm" placeholder='Name...'>
+                    <!-- submitoje -->
                     <button onclick="submitForm()" style="background-color: NULL;">
                     <i class="fa fa-search" aria-hidden="true"></i> Search
                     </button>
@@ -207,7 +210,7 @@
                                 if(isset($searchTerm)){
                                     $sql = "SELECT id, firstName, lastName, gender, email FROM Users WHERE firstName LIKE \"%{$searchTerm}%\" or lastName like \"%{$searchTerm}%\"";
                                 } else {
-                                    $sql = "SELECT id, firstName, lastName, gender, email FROM Users";
+                                    $sql = "SELECT id, firstName, lastName, gender, email FROM Users"; # qe me ta load para se me bo submit
                                 }
                                 $stmt = $pdo->query($sql);
                                 $stmt->execute();
@@ -258,6 +261,41 @@
             </form>
         </div>
     </div>
+
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('customerForm');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Create a new FormData object
+                var formData = new FormData(form);
+
+                // Create a new XMLHttpRequest object
+                var xhr = new XMLHttpRequest();
+
+                // Configure it: POST-request to the URL /submit
+                xhr.open('POST', '', true);
+
+                // Set up a function to handle the response
+                // xhr.onreadystatechange = function() {
+                //     if (xhr.readyState === 4) { // 4 means the request is done
+                //         if (xhr.status === 200) { // 200 means a successful return
+                //             document.getElementById('result').innerHTML = xhr.responseText; // Show the result
+                //         } else {
+                //             console.error('An error occurred during the transaction');
+                //         }
+                //     }
+                // };
+
+                // Send the request with the form data
+                xhr.send(formData);
+            });
+        });
+
+    </script>
+
 </body>
 </html>

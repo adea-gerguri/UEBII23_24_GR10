@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Search</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Customers</h1>
+    <input type="text" id="searchTerm" placeholder="Name...">
+    <button onclick="search()">Search</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="customerTable">
+            <!-- Search results will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        function search() {
+            var searchTerm = $('#searchTerm').val();
+            $.ajax({
+                url: './search.php',
+                type: 'POST',
+                data: { searchTerm: searchTerm },
+                success: function(data) {
+                    var users = JSON.parse(data);
+                    var tableContent = '';
+                    users.forEach(function(user) {
+                        tableContent += '<tr>';
+                        tableContent += '<td>' + user.id + '</td>';
+                        tableContent += '<td>' + user.firstName + ' ' + user.lastName + '</td>';
+                        tableContent += '<td>' + user.gender + '</td>';
+                        tableContent += '<td>' + user.email + '</td>';
+                        tableContent += '</tr>';
+                    });
+                    $('#customerTable').html(tableContent);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
