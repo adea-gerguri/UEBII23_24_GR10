@@ -39,5 +39,3 @@
         echo "<tr colspan=\"4\"><td>" . $e->getMessage() . "</td></tr>";
 
     }
-
-?>
