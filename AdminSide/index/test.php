@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            <h2 onclick="loadNewContent('./main-content', 'main-content')">RHAE <br> Admin Dashboard</h2>
+            <h2 onclick="location.reload()" id="logoHome">RHAE <br> Admin Dashboard</h2>
             <ul>
                 <li><a href="#dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                 <li><a href="#products"><i class="fas fa-box"></i> Products</a></li>
