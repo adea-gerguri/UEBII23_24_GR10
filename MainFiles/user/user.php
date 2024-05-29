@@ -127,7 +127,7 @@ setBackgroundColorCookie($backgroundColor);
     }
 </style>
 
-<body style="background-color: <?php echo $backgroundColor; ?>;">
+<body style="background-color: <?php echo $backgroundColor; ?>">
     <div id="userinfo" class="container mt-5">
         <div class="row">
             <div class="col-md-6 mx-auto">

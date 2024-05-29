@@ -6,18 +6,12 @@
         
         $con = mysqli_connect('localhost', 'root', '', 'web2', '3307');              
         
-        if(isset($_POST["input"])){
-
-            $input = $_POST["input"];
-            $sql = "SELECT id, firstName, lastName, gender, email FROM Users WHERE firstName LIKE \"%{$input}%\" or lastName like \"%{$input}%\"";
-
-        } else {
-
-            $sql = "SELECT id, firstName, lastName, gender, email FROM Users";
-            
-        }
+        $input = $_POST["input"];
+        $sql = "SELECT id, firstName, lastName, gender, email FROM Users WHERE firstName LIKE \"%{$input}%\" or lastName like \"%{$input}%\"";
 
         $resultSet = mysqli_query($con, $sql);
+
+        // echo("<tr><td colspan=\"4\">$sql</td></tr>");
 
         if(mysqli_num_rows($resultSet) > 0) {
 
@@ -32,6 +26,7 @@
                 echo "</tr>";
             
             }
+
         }
 
     } catch (Exception $e) {
