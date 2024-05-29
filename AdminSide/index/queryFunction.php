@@ -7,6 +7,8 @@
             $con = mysqli_connect('localhost', 'root', '', 'web2', '3307');
 
             $resultSet = mysqli_query($con, $sql);
+
+            // agon amiga
             
             if(mysqli_num_rows($resultSet) > 0) {
 
