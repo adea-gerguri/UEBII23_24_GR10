@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php include '../HeaderFooter/header.php'?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -25,8 +26,9 @@
 
     <title>Contact Us</title>
 </head>
-<div id="header"></div>
+
 <body>
+    <div id="header"></div>
     <div class="informationAboutUs">
         <h1 class="firstParagraph">Get in touch with our creator-friendly<br>    support team</h1>
         <p class="secondParagraph">Our business hours are 9AM-6PM ET Monday-Friday and 9AM-5PM ET on weekends.</p>
@@ -34,9 +36,24 @@
 
     <div class="emailCard">
         <p>Send us an email and we'll get<br> back to you soon</p>
-        <a class="sendMail" href="mailto:rhae@rhae.com">Send Email</a>
-    </div>
+        <div class="container">
 
+    <form id="contact" action="sendEmail.php" method="post">
+      <fieldset><input placeholder="Your name" name="name" type="text" tabindex="1" autofocus></fieldset>
+      <br>
+      <fieldset><input placeholder="Your Email Address" name="email" type="email" tabindex="2"></fieldset>
+      <br>
+      <fieldset><input placeholder="Type your subject line" type="text" name="subject" tabindex="4"></fieldset>
+      <br>
+      <fieldset><textarea name="message" placeholder="Type your Message Details Here..." tabindex="5"></textarea></fieldset>
+      <br>
+      <fieldset><button type="submit" name="send" id="contact-submit">Submit Now</button></fieldset>
+    </form>
+
+    
+  </div>
+    </div>
+<br><br>
     <h1 class="talkToTeam">Talk to Our Team</h1>
     <p style="text-align: center; margin-top: 70px;" class="ref"></p>
 

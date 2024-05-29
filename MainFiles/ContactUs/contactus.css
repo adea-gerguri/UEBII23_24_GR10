@@ -1,71 +1,100 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #FDFBF9;
+    margin: 0;
+    padding: 0;
 }
 
-
-.firstParagraph{
-    /* display: block; */
-    text-align: center;
+header, footer {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 2px solid #8B0000;
 }
 
-.secondParagraph{
+.informationAboutUs {
     text-align: center;
+    margin: 100px 0 20px 0;
+}
+
+.firstParagraph {
+    font-size: 2em;
+    margin: 0.5em 0;
+}
+
+.secondParagraph {
+    font-size: 1.2em;
     opacity: 50%;
-
+    margin: 0.5em 0;
 }
 
-.informationAboutUs{
-    margin-top: 100px;
-}
-
-.emailCard{
-    /* border: 1px solid black; */
+.emailCard {
     display: inline-block;
     padding: 30px;
+    position: relative;
     left: 50%;
     transform: translateX(-50%); 
-    position: relative;
     align-items: center;
     background-color: #f5efeb;
     text-align: center;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 60%;
 }
 
-.sendMail{
-    text-decoration: none;
-    color: black;
+.emailCard p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
 }
 
-.sendMail:hover{
-    /* display:block; */
-    /* content: ''; */
-    border-bottom: solid 3px #019fb6;  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-
-
-.ref::before {
-    
-    font-weight: bold;
-    color: black;
-    position: absolute;
-    display: block;
-    inline-size: 700px;
-    margin-left: 400px;
-    content: "At RHAE, unparalleled customer support is the key driving  force that sets us apart in the realm of e-commerce platforms.";
-    /* white-space: pre; */
+form {
+    width: 100%;
 }
 
-.talkToTeam{
+fieldset {
+    border: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+button#contact-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #8B0000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#contact-submit:hover {
+    background-color: #A52A2A;
+}
+
+.talkToTeam {
     margin-top: 20px;
     text-align: center;
     overflow: hidden;
 }
 
-.peopleImages{
+.peopleImages {
     width: 100px;
     height: 100px;
     margin-top: 100px;
@@ -74,11 +103,31 @@ body {
     display: inline-block;
 }
 
-.peopleNames{
+.peopleNames {
     font-family: 'Montserrat', sans-serif;
-
     display: inline-block;
     margin-left: 250px;
+}
+
+.ref::before {
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    display: block;
+    inline-size: 700px;
+    margin-left: 400px;
+    content: "At RHAE, unparalleled customer support is the key driving force that sets us apart in the realm of e-commerce platforms.";
+}
+
+.sendMail {
+    text-decoration: none;
+    color: black;
+}
+
+.sendMail:hover {
+    border-bottom: solid 3px #019fb6;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
 }
 
 .fnd.fndi {
@@ -87,29 +136,29 @@ body {
     padding: 10px;
 }
 
-a.help{
+a.help, a.about, a.sign {
     display: block;
     text-decoration: none;
     color: black;
     text-align: center;
 }
-a.about{
-    display: block;
-    text-decoration: none;
-    color: black;
-    text-align: center;
-}
-a.sign{
-    color: black;
-}
+
 .fnd .fndi a {
     line-height: 24px;
     margin-bottom: 20px;
 }
-h2.ff{
+
+h2.ff {
     text-align: center;
 }
-  
-.lastParagraph{
-  text-align: center;
-}  
+
+.lastParagraph {
+    text-align: center;
+}
+
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
