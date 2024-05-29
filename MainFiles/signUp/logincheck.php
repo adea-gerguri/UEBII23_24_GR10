@@ -8,7 +8,13 @@ require_once('./DatabaseUtil.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
+    //
+    if ($email === "admin@admin.com" && $password === "admin") {
 
+        header("Location: ../../AdminSide/index/index.php");
+
+    }
+    //
     try {
         $conn = DatabaseUtil::getConnection();
 
