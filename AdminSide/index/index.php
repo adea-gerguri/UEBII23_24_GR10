@@ -14,9 +14,9 @@
     
     <?php 
         include '../dbConn/init.php';
-        // include "../dbConn/objects.php";
         include "../index/queryFunction.php";
         define("self_path", $_SERVER["PHP_SELF"]);
+        llogaritOrders($newOrdersCount);
     ?>
     
 </head>
@@ -99,39 +99,12 @@
 
                             <?php
 
-                                try{
-
-                                    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
-                                    $pdo = new PDO($dsn, $username, $password);
-                                    
-                                    $sql = "SELECT COUNT(order_id) AS numriPorosive FROM orders WHERE OrderDate >= CURDATE() - INTERVAL 1 WEEK;";
-                                    
-                                    $stmt = $pdo->query($sql);
-                                    $stmt->execute();
-                                    
-                                    #echo"<script>console.log(\"ledri vula\")</script>";
-
-                                    $rezultati = $stmt->fetch(PDO::FETCH_ASSOC);
-
-                                    if ($rezultati){
-
-                                        echo $rezultati["numriPorosive"];
-
-                                    } else {
-
-                                        echo "No New Orders";
-
-                                    }
-
-                                } catch (Exception $e){
-                                    
-                                    echo"Error 404; No Database Connection";
-
-                                }
+                                echo $newOrdersCount;
 
                             ?>
 
                         </p>
+
                     </div>
 
                     <div class="card">
@@ -275,11 +248,15 @@
                     </thead>
                     
                     <tbody>
+
                         <!-- Orders data will go here -->
                         <?php
+
                             $sql = "SELECT order_id, customer_id, total, order_status, orderDate FROM Orders WHERE OrderDate >= CURDATE() - INTERVAL 1 WEEK ORDER BY orderDate DESC;";
-                            query($sql);
+                            query($sql, $newOrdersCount);
+
                         ?>
+
                     </tbody>
 
                 </table>
@@ -329,7 +306,6 @@
             <div id="settings">
 
                 <h2>Settings</h2>
-
                 <!-- Qitu vijn settings -->
 
             </div>
@@ -401,3 +377,37 @@
     
 </body>
 </html>
+
+<?php 
+
+    function llogaritOrders(&$newOrdersCounter) {
+
+        try {
+
+            $con = mysqli_connect('localhost', 'root', '', 'web2', '3307');              
+            
+            $sql = "SELECT COUNT(order_id) AS numriPorosive FROM orders WHERE OrderDate >= CURDATE() - INTERVAL 1 WEEK;";
+            
+            $resultSet = mysqli_query($con, $sql);
+            
+            #echo"<script>console.log(\"ledri vula\")</script>";
+            
+            if(mysqli_num_rows($resultSet) > 0) {
+                
+                while ($row = mysqli_fetch_assoc($resultSet)){
+                    
+                    $newOrdersCounter = $row["numriPorosive"];
+
+                }
+    
+            }
+
+        } catch (Exception $e){
+            
+            echo"Error 404; No Database Connection";
+
+        }
+
+    }
+
+?>
