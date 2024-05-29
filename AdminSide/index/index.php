@@ -277,7 +277,7 @@
                     <tbody>
                         <!-- Orders data will go here -->
                         <?php
-                            $sql = 'Select * from users';
+                            $sql = "SELECT order_id, customer_id, total, order_status, orderDate FROM Orders WHERE OrderDate >= CURDATE() - INTERVAL 1 WEEK ORDER BY orderDate DESC;";
                             query($sql);
                         ?>
                     </tbody>

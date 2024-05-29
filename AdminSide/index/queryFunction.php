@@ -12,9 +12,10 @@ function query(&$query){
 
         $con = mysqli_connect('localhost', 'root', '', 'web2', '3307');              
         
-        $sql = "SELECT order_id, customer_id, total, order_status, orderDate FROM Orders WHERE OrderDate >= CURDATE() - INTERVAL 1 WEEK;";
+        // $sql = "SELECT order_id, customer_id, total, order_status, orderDate FROM Orders WHERE OrderDate >= CURDATE() - INTERVAL 1 WEEK;";
 
-        $resultSet = mysqli_query($con, $sql);
+        // $resultSet = mysqli_query($con, $sql);
+        $resultSet = mysqli_query($con, $query);
 
 
 
@@ -40,5 +41,7 @@ function query(&$query){
         echo "<tr colspan=\"4\"><td>" . $e->getMessage() . "</td></tr>";
 
     }
+
+    unset($query);
 
 }
