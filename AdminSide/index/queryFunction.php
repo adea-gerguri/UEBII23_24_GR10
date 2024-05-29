@@ -4,17 +4,10 @@
 
         try {
 
-            // print_r($query);
+            $con = mysqli_connect('localhost', 'root', '', 'web2', '3307');
 
-            $con = mysqli_connect('localhost', 'root', '', 'web2', '3307');              
-            
-            // $sql = "SELECT order_id, customer_id, total, order_status, orderDate FROM Orders WHERE OrderDate >= CURDATE() - INTERVAL 1 WEEK ORDER BY orderDate DESC;";
-
-            // $resultSet = mysqli_query($con, $sql);
             $resultSet = mysqli_query($con, $sql);
-
-
-
+            
             if(mysqli_num_rows($resultSet) > 0) {
 
                 while ($row = mysqli_fetch_assoc($resultSet)){
@@ -31,8 +24,6 @@
                 }
 
             }
-
-            $sql = "ZHUSHI ZHUSHIII";
 
         } catch (Exception $e) {
 
