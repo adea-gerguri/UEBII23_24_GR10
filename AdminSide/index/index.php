@@ -14,7 +14,7 @@
     
     <?php 
         include '../dbConn/init.php';
-        include "../dbConn/objects.php";
+        // include "../dbConn/objects.php";
         include "../index/queryFunction.php";
         define("self_path", $_SERVER["PHP_SELF"]);
     ?>
