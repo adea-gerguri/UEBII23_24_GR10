@@ -78,6 +78,7 @@
 
                     <p class="mt-3">Don't have an account? <a href="signup.php" target="_blank">Sign Up</a></p>
                     <p class="mt-3">Do you want to change your password? <a href="changePassword.html" target="_self">Change Password</a></p>
+                    <p class="mt-3">Do you want to delete your account? <a href="../deleteUser/deleteAccount.html" target="_self">Delete Account</a></p>
                 </form>
 
             </div>
